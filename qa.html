@@ -5,11 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            background-color: rgb(242, 242, 242);
+            font-family: sans-serif;
+        }
+        div {
+            scale: 95%;
+            background-color: rgb(224, 224, 224);
+        }
+        h3 {
+            padding: 40px;
+            margin-bottom: -30px;
+        }
     
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th, td {
+            padding: 25px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid #ddd;
+        }
+    
+        th {
+            width: 75px;
+        }
+    
+        span {
+            color: red;
+        }
+    
+        input[type="text"]{
+            width: 95.5%;
+            padding:10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        #inquiry{
+            height: 150px;
+        }
     </style>
+    
 </head>
 <body>
-    <h5>문의하기</h5>
+    <h3>문의하기</h3>
     <div>
         <table>
             <colgroup>
@@ -34,7 +76,7 @@
                         <span>*</span>
                     </th>
                     <td>
-                        <input type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요.">
+                        <input class="box" type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요." style="width: 226%;">
                     </td>
                 </tr>
                 <br>
@@ -43,7 +85,7 @@
                         <span>*</span>
                     </th>
                     <td>
-                        <input type="text" placeholder="이메일을 입력하세요.">
+                        <input class="box" type="text" placeholder="이메일을 입력하세요." style="width: 226%;">
                     </td>
                 </tr>
                 <br>
@@ -52,7 +94,8 @@
                         <span>*</span>
                     </th>
                     <td>
-                        <textarea name="" id="" cols="30" rows="10" placeholder="문의내용을 입력하세요."></textarea>
+                        <input class="box" id="inquiry" type="text" placeholder="문의내용을 입력하세요." style="width: 226%;">
+
                     </td>
                 </tr>
             </tbody>
