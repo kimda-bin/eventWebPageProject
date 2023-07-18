@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공공데이터 테스트</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <p id="data"></p>
+
+    <!-- 
+    <script>
+        var xhr = new XMLHttpRequest();
+        var url = "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/xml/culturalEventInfo/1/30/"; /*URL*/
+        xhr.open('GET', url);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == xhr.DONE) { // <== 정상적으로 준비되었을때
+                if (xhr.status == 200 || xhr.status == 201) { // <== 호출 상태가 정상적일때
+                    console.log(this.responseText);
+                }
+            }
+        };
+        xhr.send('');
+    </script> -->
+
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/30/",
+            data: {},
+            success: function (response) {
+                console.log(response)
+                let rows = response["culturalEventInfo"]["row"]
+                let lots = [];
+                let lats = [];
+                for (let i = 0; i < rows.length; i++) {
+                    lots = rows[i]["LOT"]
+                    console.log(lots)
+                    lats = rows[i]["LAT"]
+                }
+
+            }
+        })
+    </script>
+</body>
+
+</html>

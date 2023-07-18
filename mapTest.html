@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mapTest</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijdya8hea0"></script>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #map {
+            width: 500px;
+            height: 500px;
+            border-radius: 15px;
+        }
+
+        .eventCard {
+            width: 300px;
+            height: 500px;
+            margin-right: 20px;
+            border-style: solid;
+            border-width: 5px;
+            border-radius: 15px;
+            border-color: black;
+
+        }
+
+        .image {
+            background-color: blue;
+            width: 250px;
+            height: 300px;
+            margin-top: 10px;
+            border-style: solid;
+            border-width: 5px;
+            border-radius: 15px;
+        }
+
+        .eventName {
+            background-color: brown;
+        }
+
+        .eventLocation {
+            background-color: aqua;
+        }
+
+        .eventTime {
+            background-color: chocolate;
+        }
+
+        .font {
+            font-size: 25px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="eventCard">
+            <img src="img/포도.jpg" alt="대표이미지" class="image">
+            <div class="eventName font">이름</div>
+            <div class="eventLocation font">장소</div>
+            <div class="eventTime font">시간</div>
+        </div>
+        <div id="map"></div>
+    </div>
+
+
+
+    <script>
+        let url = "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/xml/culturalEventInfo/1/30/"
+
+        let map = new naver.maps.Map('map', {
+            center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576),
+            zoom: 13
+        });
+
+
+        $.ajax({
+            type: "GET",
+            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/50/",
+            data: {},
+            success: function (response) {
+
+                let rows = response["culturalEventInfo"]["row"]
+
+                for (let i = 0; i < rows.length; i++) {
+                    let marker = new naver.maps.Marker({
+                        map: map,
+                        position: new naver.maps.LatLng(rows[i]["LOT"], rows[i]["LAT"]),
+                    });
+                }
+
+
+
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
