@@ -23,7 +23,7 @@
         }
 
         .eventCard {
-            width: 300px;
+            width: 250px;
             height: 500px;
             margin-right: 20px;
             border-style: solid;
@@ -33,30 +33,28 @@
 
         }
 
-        .image {
-            background-color: blue;
-            width: 250px;
+        img {
+            width: 200px;
             height: 300px;
-            margin-top: 10px;
-            border-style: solid;
-            border-width: 5px;
             border-radius: 15px;
         }
 
-        .eventName {
-            background-color: brown;
+        .image {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
         }
 
-        .eventLocation {
-            background-color: aqua;
-        }
+        .eventName {}
 
-        .eventTime {
-            background-color: chocolate;
-        }
+        .eventLocation {}
+
+        .eventTime {}
 
         .font {
-            font-size: 25px;
+            font-size: 17px;
+            margin-bottom: 10px;
         }
     </style>
 
@@ -65,10 +63,10 @@
 <body>
     <div class="container">
         <div class="eventCard">
-            <img src="img/포도.jpg" alt="대표이미지" class="image">
-            <div class="eventName font">이름</div>
-            <div class="eventLocation font">장소</div>
-            <div class="eventTime font">시간</div>
+            <div class="image"></div>
+            <div class="eventName font"></div>
+            <div class="eventLocation font"></div>
+            <div class="eventTime font"></div>
         </div>
         <div id="map"></div>
     </div>
@@ -83,6 +81,10 @@
             zoom: 13
         });
 
+        var markerOptions = {
+            clickable: true
+        }
+
 
         $.ajax({
             type: "GET",
@@ -91,19 +93,44 @@
             success: function (response) {
 
                 let rows = response["culturalEventInfo"]["row"]
+                let marker = [];
 
                 for (let i = 0; i < rows.length; i++) {
-                    let marker = new naver.maps.Marker({
+                    marker = new naver.maps.Marker({
                         map: map,
                         position: new naver.maps.LatLng(rows[i]["LOT"], rows[i]["LAT"]),
                     });
+
+                    naver.maps.Event.addListener(marker, "click", function () {
+                        var markerOptions = {
+                            position: new naver.maps.LatLng(rows[i]["LOT"], rows[i]["LAT"]),
+                            map: map,
+                            icon: {
+                                url: '../img/location-marker.png',
+                                size: new naver.maps.Size(30, 41)
+                            }
+                        }
+
+
+
+                        $(".eventName").text(rows[i]["TITLE"])
+                        $(".eventLocation").text(rows[i]["PLACE"])
+                        $(".eventTime").text(rows[i]["DATE"])
+                        let imgUrl = rows[i]["MAIN_IMG"]
+                        console.log(imgUrl)
+                        $(".image").html(`<img src="${imgUrl}"></img>`)
+                    })
+
+
+
                 }
 
+
+                // x : lat / y : lot
 
 
             }
         })
-
 
     </script>
 </body>
