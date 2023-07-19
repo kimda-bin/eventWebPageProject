@@ -5,10 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            /* 아이템을 수직 방향으로 중앙 정렬. */
+        }
+        form{
+            width: 200px;
+            height: 270px;
+            background-color: black;
+            padding-left: 25px;
+            
+            
+        }
+        /* div{
+            border-collapse: ;
+        } */
+        /* #id{
+            justify-content: space-evenly;
+            align-content: center;
+        } */
+        #lg{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 100px;
+            margin-top: 15px;
+            color: white;
+            background-color: rgb(239, 86, 86);
+            padding-left: 17.6%;
+            padding-right: 17.6%;
+            cursor: pointer;
+        }
+        h2{ 
+            color: white;
+            text-align: left;
+        }
+        input[type="checkbox"]{
+            margin-top: 5%;
+            
+        }
+        #checkbox{
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: xx-small;
+        }
+        #checkbox label{
+            margin-top: 3%;
+        }
+
+    </style>
 </head>
 
 <body>
-
+    <form action="">
+    <h2>로그인</h2>
+    <div id="id">
+        <input type="text" maxlength="30" placeholder="이메일 주소 또는 전화번호">   
+    </div>
+    <div id="pw">    
+        <input type="text" maxlength="30" placeholder="비밀번호">
+    </div>        
+    <div id="lg">로그인</div>
+    <div id="checkbox">
+        <input type="checkbox" >
+        <label for="">로그인 정보 저장</label>
+    </div>
+    <form action=""></form>
 </body>
-
 </html>
