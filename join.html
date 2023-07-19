@@ -10,67 +10,81 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 5%;
-            background-color: rgb(73, 73, 73);
+            margin-top: 10%;
+            background-color: rgb(95, 95, 95);
+            scale: 120%;
         }
         input[type="text"]{
             width: 150%;
             height: 25px;
             border: 0.1px solid rgb(239, 239, 239);
-            border-radius: 3%;
+            border-radius: 3px;
+            margin-bottom: 1px;
             
         }
         #id2{
             margin-top: 5%;
         }        
         h2{ 
-           margin-right: 7.5%;
+           margin-right: 5.5%;
         }
         .item3{
             margin-top: 5%;
             /* margin-left: 0%; */
             padding-left: 2%;
             padding-top: 2%;
-            border: 1px solid white;
+            /* border: 1px solid white; */
             color: white;
-            background-color: rgb(67, 204, 85);
-            border-radius: 5%;
+            background-color: rgb(255, 91, 91);
+            border-radius: 5px;
             width: 151%;
             height: 30px;
             text-align: center;
             cursor: pointer;
         }
         .item3:hover{
-            background-color: rgb(80, 185, 80);
+            background-color: rgb(255, 21, 21);
+        }
+        @media screen and (min-width: 300px) and (max-width: 767px){
+            body{
+                /* display: block;
+                margin: 0% auto; */
+                margin-right: 100px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h2>회원가입</h2>
-    <div class="container">
-        <div id="id">
-        <div class="item">
-            <input type="text" placeholder="아이디">
-        </div>
-        <div class="item">
-            <input type="text" placeholder="비밀번호">
-        </div>
-        <div class="item">
-            <input type="text" placeholder="[선택] 비밀번호 분실 시 확인용 이메일">
-        </div>
-        </div>
-        <div id="id2">
-        <div class="item item2">
-            <input type="text" placeholder="이름">
-        </div>
-        <div class="item item2">
-            <input type="text" placeholder="생년월일 6자리">
-        </div>
-        <div class="item3">회원가입</div>
+    <div>
+        <h2>회원가입</h2>
+        <div class="container">
+            <div id="id">
+            <div class="item">
+                <input type="text" placeholder="아이디">
+            </div>
+            <div class="item">
+                <input type="text" placeholder="비밀번호">
+            </div>
+            <div class="item">
+                <input type="text" placeholder="[선택] 비밀번호 분실 시 확인용 이메일">
+            </div>
+            </div>
+            <div id="id2">
+            <div class="item item2">
+                <input type="text" placeholder="이름">
+            </div>
+            <div class="item item2">
+                <input type="text" placeholder="생년월일 6자리">
+            </div>
+            <div class="item3">회원가입</div>
+            </div>
         </div>
     </div>
-
+    
+    <script>
+        
+    </script>
 </body>
 
 </html>
