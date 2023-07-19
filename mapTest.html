@@ -15,6 +15,7 @@
         .container {
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         #map {
@@ -31,6 +32,8 @@
             border-width: 3px;
             border-radius: 15px;
             border-color: black;
+            text-align: center;
+            background-image: url("img/background-img.PNG")
         }
 
         .eventCard:hover {
@@ -47,6 +50,16 @@
             margin: 10px;
             display: flex;
             justify-content: center;
+        }
+
+        .codeName {
+            height: 30px;
+            width: 200px;
+            background-color: black;
+            text-align: center;
+            display: inline-block;
+            border-radius: 0 0 15px 15px;
+            color: white;
         }
 
         .eventName {
@@ -68,6 +81,8 @@
 <body>
     <div class="container">
         <div class="eventCard">
+            <!-- <img src="img/festival.gif" class="backgroundImage"> -->
+            <!-- <div class="codeName"></div> -->
             <div class="image"></div>
             <div class="eventName font"></div>
             <div class="eventLocation font"></div>
@@ -83,7 +98,7 @@
 
         let map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576),
-            zoom: 13
+            zoom: 11
         });
 
 
@@ -108,9 +123,13 @@
 
 
                     naver.maps.Event.addListener(marker[i], "click", function () {
+                        $(".codeName").remove();
+                        $(".eventCard").attr("style", " background-image: none")
                         $(".eventName").text(rows[i]["TITLE"])
                         $(".eventLocation").text(rows[i]["PLACE"])
                         $(".eventTime").text(rows[i]["DATE"])
+                        $(".eventCard").prepend(`<div class="codeName"></div>`)
+                        $(".codeName").text(rows[i]["CODENAME"])
                         let imgUrl = rows[i]["MAIN_IMG"]
                         $(".image").html(`<img src="${imgUrl}"></img>`)
 
