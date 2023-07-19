@@ -6,17 +6,19 @@
     <title>Document</title>
     <style>
         body {
-            background-color: rgb(242, 242, 242);
+            background-color: rgb(95, 95, 95);
             font-family: sans-serif;
             scale: 90%;
         }
-        div {
+        .container {
             scale: 95%;
-            background-color: rgb(224, 224, 224);
+            background-color: rgb(55, 55, 55);
+            border-radius: 10px;
         }
         h3 {
             padding: 40px;
             margin-bottom: -30px;
+            color: white;
         }
     
         table { 
@@ -30,6 +32,7 @@
             text-align: left;
             vertical-align: top;
             border-bottom: 1px solid #ddd;
+            color: white;
         }
     
         th {
@@ -49,22 +52,41 @@
         #inquiry{
             height: 150px;
         }
+        .box{
+            width: 225.5%;
+        }
+        
         @media screen and (min-width: 300px) and (max-width: 767px){
-            input[type="text"]{
+            th, td{
+                display: block;
+
+                /* display: flex; */
+                /* flex-direction: column; */
+                /* justify-content: space-between; */
+                /* flex-wrap: wrap; */
+            }
+            .container{
+                height: 950px;
+                padding-bottom: 10%;
                 
-                background-color: aquamarine;
+            }
+            h3{
+                padding-left: 15px;
+            }
+            table{
+                margin-top: -5%;
             }
         } 
-        @media screen and (min-width: 768px) and (max-width: 1023px){
-        }
-        @media screen and (min-width: 1024px) 
+        @media screen and (min-width: 1024px){
+
+        } 
     </style>
     
 </head>
 <body>
 
     <h3>문의하기</h3>
-    <div>
+    <div class="container">
         <table>
             <tbody>
                 <tr>
@@ -87,7 +109,7 @@
                         <span>*</span>
                     </th>
                     <td>
-                        <input class="box" type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요." style="width: 225.5%;">
+                        <input class="box" type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요.">
                     </td>
                 </tr>
                 <br>
@@ -96,7 +118,7 @@
                         <span>*</span>
                     </th>
                     <td>
-                        <input class="box" type="text" placeholder="이메일을 입력하세요." style="width: 225.5%;">
+                        <input class="box" type="text" placeholder="이메일을 입력하세요.">
                     </td>
                 </tr>
                 <br>
@@ -105,7 +127,7 @@
                         <span>*</span>
                     </th>
                     <td>
-                        <input class="box" id="inquiry" type="text" placeholder="문의내용을 입력하세요." style="width: 225.5%;">
+                        <input class="box" id="inquiry" type="text" placeholder="문의내용을 입력하세요.">
 
                     </td>
                 </tr>
