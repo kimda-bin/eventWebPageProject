@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mapTest</title>
+    <title>지도+공연정보</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script type="text/javascript"
         src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijdya8hea0"></script>
 
+    <link rel="stylesheet" href="./css/initialize.css">
     <style>
         .container {
             display: flex;
@@ -27,10 +28,13 @@
             height: 500px;
             margin-right: 20px;
             border-style: solid;
-            border-width: 5px;
+            border-width: 3px;
             border-radius: 15px;
             border-color: black;
+        }
 
+        .eventCard:hover {
+            cursor: pointer;
         }
 
         img {
@@ -40,13 +44,14 @@
         }
 
         .image {
-            margin-top: 10px;
-            margin-bottom: 10px;
+            margin: 10px;
             display: flex;
             justify-content: center;
         }
 
-        .eventName {}
+        .eventName {
+            font-weight: 700;
+        }
 
         .eventLocation {}
 
@@ -54,7 +59,7 @@
 
         .font {
             font-size: 17px;
-            margin-bottom: 10px;
+            margin: 10px;
         }
     </style>
 
@@ -74,61 +79,56 @@
 
 
     <script>
-        let url = "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/xml/culturalEventInfo/1/30/"
+        // let url = "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/xml/culturalEventInfo/1/50/"
 
         let map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576),
             zoom: 13
         });
 
-        var markerOptions = {
-            clickable: true
-        }
-
 
         $.ajax({
             type: "GET",
-            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/50/",
+            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/30/",
             data: {},
             success: function (response) {
 
                 let rows = response["culturalEventInfo"]["row"]
                 let marker = [];
 
+
                 for (let i = 0; i < rows.length; i++) {
-                    marker = new naver.maps.Marker({
+                    marker[i] = new naver.maps.Marker({
                         map: map,
                         position: new naver.maps.LatLng(rows[i]["LOT"], rows[i]["LAT"]),
+                        icon: {
+                            url: "../img/location-pin.png",
+                        }
                     });
 
-                    naver.maps.Event.addListener(marker, "click", function () {
-                        var markerOptions = {
-                            position: new naver.maps.LatLng(rows[i]["LOT"], rows[i]["LAT"]),
-                            map: map,
-                            icon: {
-                                url: '../img/location-marker.png',
-                                size: new naver.maps.Size(30, 41)
-                            }
-                        }
 
-
-
+                    naver.maps.Event.addListener(marker[i], "click", function () {
                         $(".eventName").text(rows[i]["TITLE"])
                         $(".eventLocation").text(rows[i]["PLACE"])
                         $(".eventTime").text(rows[i]["DATE"])
                         let imgUrl = rows[i]["MAIN_IMG"]
-                        console.log(imgUrl)
                         $(".image").html(`<img src="${imgUrl}"></img>`)
+
+                        let content = rows[i]["TITLE"]
+
+                        let infoWindow = new naver.maps.InfoWindow({
+                            content: content
+                        })
+
+                        if (infoWindow.getMap()) {
+                            infoWindow.close();
+                        } else {
+                            infoWindow.open(map, marker[i])
+                        }
+
                     })
 
-
-
                 }
-
-
-                // x : lat / y : lot
-
-
             }
         })
 
