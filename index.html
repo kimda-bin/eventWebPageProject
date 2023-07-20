@@ -65,8 +65,14 @@
                 <div class="image"></div>
                 <div class="cardFont">
                     <div class="eventName"></div>
-                    <div class="eventLocation"></div>
-                    <div class="eventTime"></div>
+                    <div class="infoL">
+                        <img src="img/locationPin.png" class="icon">
+                        <div class="eventLocation"></div>
+                    </div>
+                    <div class="infoT">
+                        <img src="img/time.png" class="icon">
+                        <div class="eventTime"></div>
+                    </div>
                 </div>
             </div>
             <!-- 네이버 지도 -->
@@ -190,7 +196,7 @@
         // 지도 출력
         let map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576),
-            zoom: 11
+            zoom: 10
         });
 
         // 서울시 공공데이터 불러오기 + 왼쪽 카드에 행사 정보 출력
