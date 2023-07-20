@@ -1,0 +1,33 @@
+
+
+@media screen and (max-width:756px) {
+    
+    /** 행사 리스트 페이지 wrap */
+    #eventContainer >.event-item-wrap  {
+        width: 85%; height: 100%; margin: auto;
+        display: block;
+    }
+
+    /** item box */
+    #eventContainer >.event-item-wrap > .item {
+        width: 100%;   margin-right: 0;
+       
+    } 
+
+}
+
+@media screen and (min-width:757px) and (max-width:1024px) {
+
+        /** 행사 리스트 페이지 wrap */
+        #eventContainer >.event-item-wrap  {
+            width: 90%;
+        }
+        /** item box */
+        #eventContainer >.event-item-wrap > .item {
+            width: calc(33% - 15px);
+           
+        } 
+
+}
+
+

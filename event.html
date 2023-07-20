@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울구석구석 행사페이지</title>
+    <link href="./css/initialize.css" rel="stylesheet"/>
+    <link href="./css/event/event-list.css" rel="stylesheet"/>
+    <link href="./css/event/event-dtail.css" rel="stylesheet"/>
+    <link href="./css/event/responsive/event-list-responsive.css" rel="stylesheet"/>
+    <link href="./css/event/responsive/event-dtail-responsive.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main>
+
+        <section class="banner">
+            행사
+        </section>
+        <section id="eventContainer" class="container">
+            <div class="event-list-fillter">
+                <select id="eventListCodenameSelect" onchange="eventListSelctChange(this)">
+                   <option value="" disabled selected>분류</option>
+                </select>
+                <select id="eventListPiceSelect" onchange="eventListSelctChange(this)">
+                    <option value="" disabled selected>가격</option>
+                </select>
+            </div>
+
+            <div id="eventItemWrap" class="event-item-wrap" ></div>
+            <div id="eventDetailWrap" class="event-detail-wrap" style="display: none;" ></div>
+        </section>
+
+    </main>
+    <script src="./js/event/event.js"></script>
+    <script src="./js/event/eventDetail.js"></script>
+    <script src="./js/fetch.js"></script>
+    <script src="./js/event/eventLoad.js"></script>
+
+</body>
+</html>
