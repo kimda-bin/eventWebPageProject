@@ -33,7 +33,7 @@
             border-radius: 15px;
             border-color: black;
             text-align: center;
-            background-image: url("img/background-img.PNG")
+            background-image: url("img/festival.gif");
         }
 
         .eventCard:hover {
@@ -74,11 +74,26 @@
             font-size: 17px;
             margin: 10px;
         }
+
+        @keyframes eventCardEvent {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 
 </head>
 
 <body>
+    <!-- 행사 정보출력 카드 -->
     <div class="container">
         <div class="eventCard">
             <!-- <img src="img/festival.gif" class="backgroundImage"> -->
@@ -88,20 +103,20 @@
             <div class="eventLocation font"></div>
             <div class="eventTime font"></div>
         </div>
+        <!-- 네이버 지도 -->
         <div id="map"></div>
     </div>
 
 
 
     <script>
-        // let url = "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/xml/culturalEventInfo/1/50/"
-
+        // 지도 출력
         let map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576),
             zoom: 11
         });
 
-
+        // 서울시 공공데이터 불러오기 + 왼쪽 카드에 행사 정보 출력
         $.ajax({
             type: "GET",
             url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/30/",
@@ -132,7 +147,6 @@
                         $(".codeName").text(rows[i]["CODENAME"])
                         let imgUrl = rows[i]["MAIN_IMG"]
                         $(".image").html(`<img src="${imgUrl}"></img>`)
-
                         let content = rows[i]["TITLE"]
 
                         let infoWindow = new naver.maps.InfoWindow({
