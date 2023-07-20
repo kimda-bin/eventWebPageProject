@@ -31,15 +31,18 @@ let hashString = window.location.hash.replace('#','');
 
 $(window).ready( async function(){ 
     datalist = await getEventDat();
-
-    console.log(hashString)
     if (window.location.search === "?detail") { // detail 페이지
                 
         if ($('#eventItemWrap')) {
              // 스크롤 이벤트 삭제 및 css 
             window.removeEventListener('scroll', eventScroll);
             $('#eventItemWrap').css('display','none');
+
+            if ($('#eventListFillter')) {
+                $('#eventListFillter').remove();
+            }
         }
+
         $('#eventDetailWrap').css('display','block');
 
         eventDetailDatavind(hashString, datalist);
@@ -66,11 +69,6 @@ $(window).ready( async function(){
         // 스크롤 이벤트 생성 
         window.addEventListener('scroll', eventScroll);
         
-        var observer = new MutationObserver(mutations => {
-            mutations.forEach(mutation => {
-              console.log(mutation);
-            });
-        });
     }
 }); 
 

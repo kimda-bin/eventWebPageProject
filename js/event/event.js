@@ -6,12 +6,12 @@ const eventItem = (datalist) => {
     // let eventItemWrap = $('#eventItemWrap');
     const priceColor = (IS_FREE) => {
         // orange : 무료, gray : 유료
-        let color = [ 'gray' ,'orange'];
+        let color = [ '#eee' ,'orange'];
 
-        if (IS_FREE === '무료') {
-            return 'backgronud-color :' + color[1]
+        if (IS_FREE === "유료") {
+            return 'background-color :' + color[0]
         } else {
-            return 'backgronud-color :' + color[0]
+            return 'background-color:' + color[1]
         }   
     }
 
@@ -73,7 +73,14 @@ const eventItemAdd = (datalist) => {
 }
 
 
-const eventFilterList = (kind,filter) => {
+['전체', '클래식','콘서트',"축제","전시/미술", "영화", "뮤지컬/오페라", "무용", "독주/독창회", "기타", "국악", "교육/체험"];
+let price = ['전체', '유료','무료']
 
+const eventFilterList = (kind, filter) => {
+
+
+    console.log(kind, filter);
+
+   
 
 }

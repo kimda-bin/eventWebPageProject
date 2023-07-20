@@ -8,12 +8,8 @@ const getEventDat = async () => {
     })
     // HTTP 요청이 성공하면 요청한 데이터가 done() 메소드로 전달됨.
     .done(function(json) {
-        console.log(json);
-
         if (json.culturalEventInfo.row.length) {
-
             rtnList = rtnList.concat(json.culturalEventInfo.row);
-            console.log('rtnList', rtnList)
         }
     })
     // HTTP 요청이 실패하면 오류와 상태에 관한 정보가 fail() 메소드로 전달됨.

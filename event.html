@@ -19,11 +19,11 @@
             행사
         </section>
         <section id="eventContainer" class="container">
-            <div class="event-list-fillter">
-                <select id="eventListCodenameSelect" onchange="eventListSelctChange(this)">
+            <div id="eventListFillter" class="event-list-fillter">
+                <select id="eventListCodenameSelect" onchange="eventFilterList('분류', this.value)">
                    <option value="" disabled selected>분류</option>
                 </select>
-                <select id="eventListPiceSelect" onchange="eventListSelctChange(this)">
+                <select id="eventListPiceSelect" onchange="eventFilterList('가격', this.value)">
                     <option value="" disabled selected>가격</option>
                 </select>
             </div>
