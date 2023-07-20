@@ -1,0 +1,119 @@
+
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; 
+            /* 아이템을 수직 방향으로 중앙 정렬. */
+            scale: 150%;
+            background-color: rgb(69, 69, 69); 
+            padding-top: 100px;
+            
+        }
+        .container{
+            width: 200px;
+            height: 250px;
+            background-color: rgb(55, 55, 55);
+            padding-left: 25px;
+            border-radius: 3%;
+            display: block;
+            margin: 0% auto;
+            
+            
+        }
+        .wrap1{
+            width:  calc(50% - 24px);
+        }
+        .wrap2{
+            padding-top: 56.25%;
+            position: relative;
+            width: 100%;
+        }
+        .content{
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        #lg{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 100px;
+            margin-top: 15px;
+            color: white;
+            background-color: rgb(255, 91, 91);
+            padding-left: 48%;
+            padding-right: 42%;
+            cursor: pointer; 
+            border-radius: 3%;
+        }
+        #lg:hover{
+            background-color: rgb(255, 21, 21);
+        }
+        h2{ 
+            color: white;
+            text-align: left;
+        }
+        input[type="checkbox"]{
+            margin-top: 5%;
+        }
+        ::placeholder
+        {
+            font-size: xx-small;
+        }
+        #checkbox{
+            display: flex;
+            align-items: center;
+            color: white;
+            font-size: xx-small;
+            width: 100px;
+            margin-top: 5px;
+            margin-left: -5px;
+        }
+        #checkbox label{
+            margin-top: 5%;
+            margin-left: 3%;
+            
+        }
+        @media screen and (min-width: 300px) and (max-width: 767px){
+            body{
+                /* width: 100%; */
+                /* height: 100%; */
+                background-color: rgb(55, 55, 55);
+            }
+            form{
+                /* width: 200px; */
+                /* height: 250px; */
+                border: 0.5px solid rgb(95, 95, 95);
+                margin: 15% auto;
+            }
+        
+            
+        }
+        #text{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: 7px;
+            color: rgb(180, 180, 180);
+            margin-top: 5px;
+            margin-left: -5px;;
+            width: 200px;
+
+        }
+        #text > a {
+            color: rgb(226, 225, 225);
+            font-size: 8px;
+            margin-right: 6px;
+            padding-right: 16px;
+            
+        }
+        /* @media screen and (min-width: 1024px){
+
+        } */
+
+    
