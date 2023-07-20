@@ -1,24 +1,22 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #map {
     width: 500px;
     height: 500px;
     border-radius: 15px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
 }
 
 .eventCard {
     width: 250px;
     height: 500px;
-    margin-right: 20px;
+    margin-right: 60px;
     border-style: solid;
     border-width: 3px;
     border-radius: 15px;
     border-color: black;
     text-align: center;
+    background-color: white;
     background-image: url("../img/festival.gif");
 }
 
@@ -26,7 +24,7 @@
     cursor: pointer;
 }
 
-img {
+.festival_img {
     width: 200px;
     height: 300px;
     border-radius: 15px;

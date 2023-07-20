@@ -69,7 +69,7 @@
                         $(".eventCard").prepend(`<div class="codeName"></div>`)
                         $(".codeName").text(rows[i]["CODENAME"])
                         let imgUrl = rows[i]["MAIN_IMG"]
-                        $(".image").html(`<img src="${imgUrl}"></img>`)
+                        $(".image").html(`<img src="${imgUrl}" class="festival_img"></img>`)
                         let content = rows[i]["TITLE"]
 
                         let infoWindow = new naver.maps.InfoWindow({
