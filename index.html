@@ -21,158 +21,6 @@
             padding: 0;
         }
 
-
-
-        /* .header {
-            display: flex;
-            position: fixed;
-            background-color: black;
-            width: 100%;
-            height: 90px;
-            justify-content: center;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-        }
-
-
-        .nav.logo>img {
-            object-fit: cover;
-            width: 150px;
-            height: 100px;
-            color: white;
-
-        }
-
-        .nav.menu_box {
-            display: flex;
-            list-style: none;
-            justify-content: space-around;
-            font-family: SUITE-Regular;
-            font-weight: 500;
-            font-size: 1.1em;
-            color: white;
-            width: 100%;
-
-        }
-
-        .nav.menu {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .nav.menu>li {
-            margin-left: 40px;
-            margin-right: 40px;
-            font-weight: 400;
-        } */
-
-
-        /* video {
-            width: 100%;
-
-
-        }
-
-        h2 {
-            font-family: SUITE-Regular;
-            text-align: center;
-        }
-
-
-        .map_container {
-            background-color: #ededed;
-            width: 100%;
-            height: 350px;
-            margin-top: 1em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-        }
-
-        .map_text {
-            width: 350px;
-            height: 250px;
-            color: rgb(0, 0, 0);
-            font-family: SUITE-Regular;
-        }
-
-        .map_image {
-            background-color: white;
-            width: 350px;
-            height: 250px;
-        }
-
-        .festival {
-            background-color: #ededed;
-
-
-        }
-
-        .festival_container {
-            max-width: 90%;
-            margin: auto;
-            margin-top: 1em;
-        }
-
-        .festival_list {
-            margin: 30px;
-
-        }
-
-        .slick-list {
-            height: 100%;
-        }
-
-        .slick-prev:before,
-        .slick-next:before {
-            font-size: 25px;
-            line-height: 1;
-            opacity: .75;
-            color: black;
-        }
-
-        .festival_list_text_box {
-            font-family: SUITE-Regular;
-            text-align: center;
-            margin-top: 1em;
-
-        }
-
-        .festival_list:hover {
-            box-shadow: 0 14px 18px #00000040, 0 10px 10px #00000038;
-            transform: translateY(-10px);
-        }
-
-
-        .festival_list img {
-            width: 100%;
-        } */
-
-        /* footer {
-            background-color: black;
-            color: white;
-            font-family: SUITE-Regular;
-            display: flex;
-            align-items: center;
-            height: 150px;
-            justify-content: space-around;
-        }
-
-        .footer_logo {
-            font-size: 2em;
-            font-weight: bold;
-
-        }
-
-        .footer_email {
-            margin-bottom: 0.5em;
-            list-style: none;
-
-        } */
     </style>
 </head>
 
@@ -181,20 +29,27 @@
     <header class="header">
         <ul class="nav menu_box">
             <div class="nav menu">
-                <li>행사리스트</li>
-                <li>문의사항</li>
+                <li><a id="nav_link" href="./event.html">행사리스트</a></li>
+                <li><a id="nav_link" href="./qa.html">문의사항</a></li>
             </div>
 
             <div>
                 <li class="nav logo">
-                    <img src="./서울구석구석로고.png">
+                    <a href="./index.html"><img src="./서울구석구석로고.png"></a>
                 </li>
             </div>
 
             <div class="nav menu">
-                <li>LOGIN</li>
-                <li>SIGNUP</li>
+                <li><a id="nav_link" href="./login.html">LOGIN</a></li>
+                <li><a id="nav_link" href="./join.html">JOIN</a></li>
             </div>
+            
+            <!-- <div class="responsive_nav">
+                <li><a id="nav_link" href="./event.html">행사리스트</a></li>
+                <li><a id="nav_link" href="./qa.html">문의사항</a></li>
+                <li><a id="nav_link" href="./login.html">LOGIN</a></li>
+                <li><a id="nav_link" href="./join.html">JOIN</a></li>
+            </div> -->
 
         </ul>
 
@@ -331,6 +186,14 @@
 
             ]
         });
+
+        // let logo = document.querySelector(".nav.logo>a>img")
+        // logo.addEventListener("mouseover", () => {
+        //    document.querySelector(".responsive_nav").style.display = "block"
+        // });
+        // logo.addEventListener("mouseout", () => {
+        //    document.querySelector(".responsive_nav").style.display = "none"
+        // });
 
     </script>
 </body>
