@@ -11,38 +11,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/mainpage.css">
+    <link rel="stylesheet" href="./css/initialize.css">
     <style>
         * {
             margin: 0;
             padding: 0;
         }
 
-        @font-face {
-            font-family: 'SUITE-Regular';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        .header {
+        /* .header {
             display: flex;
             position: fixed;
+            background-color: black;
             width: 100%;
-            height: 60px;
-            justify-content: space-between;
+            height: 90px;
+            justify-content: center;
         }
-
 
         .nav {
             display: flex;
-            margin-left: 1.5em;
             align-items: center;
         }
 
 
-        .nav.logo {
-            font-family: SUITE-Regular;
-            font-size: 1.7em;
+        .nav.logo>img {
+            object-fit: cover;
+            width: 150px;
+            height: 100px;
             color: white;
 
         }
@@ -50,24 +45,30 @@
         .nav.menu_box {
             display: flex;
             list-style: none;
+            justify-content: space-around;
             font-family: SUITE-Regular;
             font-weight: 500;
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: white;
+            width: 100%;
 
         }
 
         .nav.menu {
-            padding-left: 1.2em;
-
-        }
-
-        .nav_login_signup {
             display: flex;
+            justify-content: space-around;
         }
 
-        video {
+        .nav.menu>li {
+            margin-left: 40px;
+            margin-right: 40px;
+            font-weight: 400;
+        } */
+
+
+        /* video {
             width: 100%;
+
 
         }
 
@@ -145,9 +146,9 @@
 
         .festival_list img {
             width: 100%;
-        }
+        } */
 
-        footer {
+        /* footer {
             background-color: black;
             color: white;
             font-family: SUITE-Regular;
@@ -167,21 +168,32 @@
             margin-bottom: 0.5em;
             list-style: none;
 
-        }
+        } */
     </style>
 </head>
 
 <body>
 
     <header class="header">
+        <ul class="nav menu_box">
+            <div class="nav menu">
+                <li>행사리스트</li>
+                <li>문의사항</li>
+            </div>
 
-        <nav class="nav">
-            <h1 class="nav logo">서울구석구석</h1>
-            <ul class="nav menu_box">
-                <li class="nav menu">행사리스트</li>
-                <li class="nav menu">문의사항</li>
-            </ul>
-        </nav>
+            <div>
+                <li class="nav logo">
+                    <img src="./서울구석구석로고.png">
+                </li>
+            </div>
+
+            <div class="nav menu">
+                <li>LOGIN</li>
+                <li>SIGNUP</li>
+            </div>
+
+        </ul>
+
     </header>
 
     <main>
@@ -216,7 +228,36 @@
                 </div>
                 <div class="festival_list">
                     <img src="./카드이미지1.jpg" alt="">
+                </div>
+                <div class="festival_list">
+                    <img src="./카드이미지1.jpg" alt="">
+                </div>
+                <div class="festival_list">
+                    <img src="./카드이미지1.jpg" alt="">
+                </div>
+                <div class="festival_list">
+                    <img src="./카드이미지1.jpg" alt="">
+                </div>
+                <div class="festival_list">
+                    <img src="./카드이미지1.jpg" alt="">
+                </div>
+                <div class="festival_list">
+                    <img src="./카드이미지1.jpg" alt="">
+                </div>
 
+            </div>
+        </div>
+
+        <div class="festival">
+            <div class="festival_container">
+                <div class="festival_list">
+                    <img src="./카드이미지1.jpg" alt="">
+                </div>
+                <div class="festival_list">
+                    <img src="./카드이미지1.jpg" alt="">
+                </div>
+                <div class="festival_list">
+                    <img src="./카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
                     <img src="./카드이미지1.jpg" alt="">
@@ -239,7 +280,9 @@
     </main>
 
     <footer>
-        <div class="footer_logo">서울구석구석</div>
+        <div class="footer_logo">
+            <img src="./서울구석구석로고.png" alt="">
+        </div>
         <div>
             <ul class="footer_email_box">
                 <li class="footer_email">gkjm123@naver.com</li>
@@ -281,25 +324,9 @@
                         slidesToScroll: 1
                     }
                 }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
+              
             ]
         });
-
-        const header = document.querySelector(".header");
-        const headerHeight = header.getBoundingClientRect().height;
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > headerHeight) {
-                header.setAttribute("style", "background: rgba(0,0,0,0.7);");
-            } else {
-
-                header.setAttribute("style", "background: transparent;");
-            }
-        });
-
-
 
     </script>
 </body>
