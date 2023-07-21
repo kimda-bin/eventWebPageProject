@@ -1,32 +1,7 @@
 
-
-let listObj = {
-    CODENAME: "클래식",
-    GUNAME: "마포구",
-    TITLE: "[M클래식 축제] 마포공연예술관광페스티벌 [타케자와 유토 피아노 리사이틀]",
-    DATE: "2023-12-07~2023-12-07",
-    PLACE: "마포아트센터 아트홀 맥",
-    ORG_NAME: "마포문화재단",
-    USE_TRGT: "8세 이상",
-    USE_FEE: "R석 50,000원 / S석 30,000 / A석 20,000원",
-    PLAYER: "타케자와 유토 ",
-    PROGRAM: "",
-    ETC_DESC: "",
-    ORG_LINK: "https://www.mfac.or.kr/performance/whole_view.jsp?sc_b_category=17&sc_b_code=BOARD_1207683401&pk_seq=2219&page=1",
-    MAIN_IMG: "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=4e759ec91d6043e68bd3dfef68ce0bae&thumb=Y",
-    RGSTDATE: "2023-07-06",
-    TICKET: "기관",
-    STRTDATE: "2023-12-07 00:00:00.0",
-    END_DATE: "2023-12-07 00:00:00.0",
-    THEMECODE: "기타",
-    LOT: "37.5499060881738",
-    LAT: "126.945533810385",
-    IS_FREE: "무료",
-    HMPG_ADDR: "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=142296&menuNo=200008"
-}
-
 let datalist = [];
-let dataFilterlist = [];
+var dataFilterlist = [];
+var dataFilterlistPirce = [];
 let hashString = window.location.hash.replace('#','');  
 
 $(window).ready( async function(){ 
@@ -40,6 +15,9 @@ $(window).ready( async function(){
 
             if ($('#eventListFillter')) {
                 $('#eventListFillter').remove();
+            }
+            if ($('#eventContainer > h2')) {
+                $('#eventContainer > h2').remove();
             }
         }
 
@@ -55,6 +33,8 @@ $(window).ready( async function(){
         let price = ['전체', '유료','무료'];
         createEventFilter(codename, price);
 
+        // 행사 리스트 h2
+        $('#eventContainer').prepend(`<h2 class="event-list-title">행사 리스트</h2>`);
 
         // 필터 리스트 생성 분기
         if (hashString === '') { // 처음 페이지 접근 했을 때 
@@ -76,10 +56,17 @@ const eventScroll = () => {
 
     if (window.innerHeight + window.scrollY + window.innerHeight/9 >= document.body.scrollHeight) {
 
-        if (hashString === '' || hashString === '전체') {
+        if (dataFilterlist.length === 0) {
             eventItemAdd(datalist);
         } else {
-            eventItemAdd(dataFilterlist);
+
+            if (dataFilterlistPirce.length === 0) {
+
+                eventItemAdd(dataFilterlist);
+            } else {
+                eventItemAdd(dataFilterlistPirce);
+            }
+         
         }
     }
 }

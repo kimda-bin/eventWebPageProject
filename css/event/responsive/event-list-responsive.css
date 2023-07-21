@@ -14,6 +14,13 @@
        
     } 
 
+    #eventContainer > .event-list-fillter {
+        display: flex; justify-content: center;
+    }
+    #eventContainer > .event-list-fillter > select {
+        width: 175px; height: 30px;
+    }
+
 }
 
 @media screen and (min-width:757px) and (max-width:1024px) {

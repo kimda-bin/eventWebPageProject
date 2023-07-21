@@ -36,15 +36,22 @@ const eventDetailDatavind = (index, datalist) => {
 const createEventDetailInfo = (DATA) => {
 
     let typeTitle = ["장소", "기간", "시간", '대상', '요금', "문의"];
+    let week = ["일요일","월요일","화요일","수요일","목요일","금요일"]
     let typeContent = [];
     
+    let day = new Date(DATA.STRTDATE).getDay();
+    let hour = new Date(DATA.STRTDATE).getHours();
+    let miut = new Date(DATA.STRTDATE).getHours();
+
+    hour = hour < 10 ? '0' + hour :  hour;
+    miut = miut < 10 ? '0' + miut :  miut;
+
     typeContent.push(DATA.PLACE); // 장소
     typeContent.push(DATA.DATE); // 기간
-    typeContent.push(DATA.PLACE); // 시간
+    typeContent.push(`${week[day]} ${hour}시 ${miut}분`); // 시간
     typeContent.push(DATA.USE_TRGT); // 대상
     typeContent.push(DATA.USE_FEE); // 요금
     typeContent.push(DATA.ORG_NAME); // 문의
-    
 
     const typeLiCreate = () => {
 
@@ -70,7 +77,6 @@ const createEventDetailInfo = (DATA) => {
                 <img src="${DATA.MAIN_IMG}" alt="${DATA.TITLE}">
             </div>
             <div class="txt-box">
-             
                 <h2 class="event-title">${DATA.TITLE}</h2>
                 <ul class="type-box">
                     ${typeLiCreate()}
@@ -99,28 +105,51 @@ const createEventDetailSubinfo = (DATA) => {
         <div id="eventDetailSubInfo" class="sub-info-box">
             <h3>세부 정보</h3>
 
-            <h6>자치구</h6>
-            <p>${DATA.GUNAME}<p>
+            <div class="txt-box">
+                <h6>자치구</h6>
+                <p>${DATA.GUNAME}<p>
+            </div>
 
-            <h6>출연자 정보</h6>
-            <p>${DATA.PLAYER}<p>
+            <div class="txt-box">
+                <h6>출연자 정보</h6>
+                <p>${DATA.PLAYER}<p>
+            </div>
 
-            <h6>시작일/종료일(공연시간)</h6>
-            <p> ${startEndDate(DATA.STRTDATE, DATA.END_DATE)}()<p>
-
-            <h6>프로그램 소개</h6>
-            <p>${DATA.PROGRAM} <br/> ${DATA.ETC_DESC}<p>
+            <div class="txt-box">
+                <h6>시작일/종료일</h6>
+                <p> ${startEndDate(DATA.STRTDATE, DATA.END_DATE)}<p>
+            </div>
+            <div class="txt-box">
+                <h6>프로그램 소개</h6>
+                <p>${DATA.PROGRAM} <br/> ${DATA.ETC_DESC}<p>
+            </div>
+          
         </div>
     `)
 }
 
 
 const createEventDetailLocation = (DATA) => {
-
+ 
     $('#eventDetailWrap').append(`
         <div class="event-detail-location">
             <h3>위치안내</h3>
-            <div class="location-box"></div>
+            <div id="naverMap" class="location-box">
+            
+            </div>
         </div>
     `)
+
+    let map = new naver.maps.Map('naverMap', {
+        center: new naver.maps.LatLng(DATA.LOT, DATA.LAT),
+        zoom: 18
+    });   
+
+    new naver.maps.Marker({
+        map: map,
+        position: new naver.maps.LatLng(DATA.LOT, DATA.LAT),
+        icon: {
+            url:'../../img/location-pin.png'
+        }
+    });
 }
