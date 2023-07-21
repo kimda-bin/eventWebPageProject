@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijdya8hea0"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,6 +18,7 @@
     <link rel="stylesheet" href="./css/initialize.css">
     <link rel="stylesheet" href="./css/headerFooter.css">
     <link rel="stylesheet" href="./css/mainpage.css">
+    <link rel="stylesheet" href="./css/mapCard.css">
 
     <style>
         * {
@@ -35,7 +39,7 @@
             <li><a href="./login.html">로그인</a></li>
             <li><a href="./join.html">회원가입</a></li>
         </ul>
-      
+
         <a href="#" class="navbar__toggleBtn"><i class="fas fa-bars"></i> </a>
     </nav>
 
@@ -54,18 +58,28 @@
         <h2>행사 지역</h2>
 
         <div class="map_container">
-            <div class="map_text">
-                <p>설명</p>
+            <div class="eventCard">
+                <div class="image"></div>
+                <div class="cardFont">
+                    <div class="eventName"></div>
+                    <div class="infoL">
+                        <img src="img/locationPin.png" class="icon">
+                        <div class="eventLocation"></div>
+                    </div>
+                    <div class="infoT">
+                        <img src="img/time.png" class="icon">
+                        <div class="eventTime"></div>
+                    </div>
+                </div>
             </div>
-            <div class="map_image">
-                지도
-            </div>
+            <!-- 네이버 지도 -->
+            <div id="map"></div>
         </div>
 
         <br>
         <br>
         <br>
-        
+
         <h2>행사 리스트</h2>
 
         <div class="festival">
@@ -100,7 +114,7 @@
 
         <br>
         <br>
-        
+
         <div class="festival">
             <div class="festival_container">
                 <div class="festival_list">
@@ -193,6 +207,61 @@
 
             ]
         });
+
+        // 지도 출력
+        let map = new naver.maps.Map('map', {
+            center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576),
+            zoom: 10
+        });
+
+        // 서울시 공공데이터 불러오기 + 왼쪽 카드에 행사 정보 출력
+        $.ajax({
+            type: "GET",
+            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/30/",
+            data: {},
+            success: function (response) {
+
+                let rows = response["culturalEventInfo"]["row"]
+                let marker = [];
+
+
+                for (let i = 0; i < rows.length; i++) {
+                    marker[i] = new naver.maps.Marker({
+                        map: map,
+                        position: new naver.maps.LatLng(rows[i]["LOT"], rows[i]["LAT"]),
+                        icon: {
+                            url: "../img/location-pin.png",
+                        }
+                    });
+
+
+                    naver.maps.Event.addListener(marker[i], "click", function () {
+                        $(".codeName").remove();
+                        $(".eventCard").attr("style", " background-image: none")
+                        $(".eventName").text(rows[i]["TITLE"])
+                        $(".eventLocation").text(rows[i]["PLACE"])
+                        $(".eventTime").text(rows[i]["DATE"])
+                        $(".eventCard").prepend(`<div class="codeName"></div>`)
+                        $(".codeName").text(rows[i]["CODENAME"])
+                        let imgUrl = rows[i]["MAIN_IMG"]
+                        $(".image").html(`<img src="${imgUrl}" class="festival_img"></img>`)
+                        let content = rows[i]["TITLE"]
+
+                        let infoWindow = new naver.maps.InfoWindow({
+                            content: content
+                        })
+
+                        if (infoWindow.getMap()) {
+                            infoWindow.close();
+                        } else {
+                            infoWindow.open(map, marker[i])
+                        }
+
+                    })
+
+                }
+            }
+        })
 
     </script>
 

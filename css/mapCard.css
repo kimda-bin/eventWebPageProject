@@ -1,32 +1,40 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #map {
-    width: 500px;
+    max-width: 650px;
+    flex-grow: 1;
     height: 500px;
     border-radius: 15px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
 }
 
 .eventCard {
-    width: 250px;
+    width: 300px;
     height: 500px;
-    margin-right: 20px;
+    margin-right: 60px;
     border-style: solid;
     border-width: 3px;
     border-radius: 15px;
     border-color: black;
     text-align: center;
+    background-color: white;
     background-image: url("../img/festival.gif");
+}
+
+.infoL {
+    display: flex;
+    margin-top: 10px;
+}
+
+.infoT {
+    display: flex;
 }
 
 .eventCard:hover {
     cursor: pointer;
 }
 
-img {
+.festival_img {
     width: 200px;
     height: 300px;
     border-radius: 15px;
@@ -52,25 +60,116 @@ img {
     font-weight: 700;
 }
 
-.eventLocation {}
-
-.eventTime {}
-
-.font {
+.cardFont {
     font-size: 17px;
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-@keyframes eventCardEvent {
-    0% {
-        opacity: 0;
+.map_container {
+    background-color: #ededed;
+    width: 100%;
+    height: 600px;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    color: black;
+    margin-right: 5px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 700px) {
+    .eventCard {
+        width: 450px;
+        height: 250px;
+        background-image: url("../img/background-img-2.gif");
+        margin-right: 0;
+        margin-bottom: 20px;
+        display: flex;
     }
 
-    50% {
-        opacity: 0.5;
+    #map {
+        width: 450px;
+        max-height: 250px;
     }
 
-    100% {
-        opacity: 1;
+    .map_container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
+
+    .codeName {
+        position: absolute;
+        border-radius: 10px 0 15px 0;
+    }
+
+    .festival_img {
+        display: flex;
+        margin-bottom: -20px;
+        /* justify-content: center; */
+        width: 150px;
+        height: 190px;
+    }
+
+    .image {
+        align-items: center;
+    }
+
+    .cardFont {
+        justify-content: center;
+        align-items: start;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 480px) {
+    .eventCard {
+        width: 340px;
+        height: 200px;
+        background-image: url("../img/background-img-3.gif");
+        margin-right: 0;
+        margin-bottom: 20px;
+        display: flex;
+    }
+
+    #map {
+        width: 340px;
+        max-height: 200px;
+    }
+
+    .map_container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .codeName {
+        position: absolute;
+        border-radius: 10px 0 15px 0;
+    }
+
+    .cardFont {
+        font-size: 15px;
+        justify-content: center;
+    }
+
+    .festival_img {
+        margin-top: 20px;
+        width: 120px;
+        height: 150px;
+    }
+
+    .icon {
+        width: 15px;
+        height: 15px;
+    }
+
+
 }
