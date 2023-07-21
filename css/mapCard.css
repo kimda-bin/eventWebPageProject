@@ -30,7 +30,7 @@
     display: flex;
 }
 
-.eventCard:hover {
+.festival_img:hover {
     cursor: pointer;
 }
 
@@ -54,10 +54,17 @@
     display: inline-block;
     border-radius: 0 0 15px 15px;
     color: white;
+
 }
 
 .eventName {
     font-weight: 700;
+}
+
+.eventCardBottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cardFont {
@@ -83,6 +90,7 @@
     height: 20px;
     color: black;
     margin-right: 5px;
+    display: none;
 }
 
 @media screen and (min-width: 480px) and (max-width: 700px) {

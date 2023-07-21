@@ -1,9 +1,74 @@
-video {
+.media {
+    height: 700px;
+}
+
+.media > video {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+
+/* video {
     width: 100%;
     position: relative;
     top: 88px;
+    object-fit: cover;
+} */
+
+.video_text {
+    position: absolute;
+    bottom: 45%;
+    left: 8%;
+    font-family: SUITE-Regular;
+    color: white;
+    font-size: 55px;
+    font-weight: 900;
 
 }
+
+
+.video_text1 {
+    font-size: 65px;
+    animation: fadein 5s;
+    -webkit-animation: fadein 5s;
+}
+
+.video_text2 {
+    animation: fadein 7s;
+    -webkit-animation: fadein 7s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .video_text {
+        display: block;
+        width: 300px;
+        position: absolute;
+        bottom: 50%;
+        left: 8%;
+
+    }
+
+    .video_text1 {
+        font-size: 50px;
+        font-weight: 800;
+
+    }
+
+    .video_text2 {
+        font-size: 35px;
+    }
+}
+
 
 h2 {
     font-family: SUITE-Regular;

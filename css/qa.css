@@ -1,24 +1,31 @@
 
         body {
             background-color: white;
-            scale: 80%;
+            /* scale: 80%; */
             /* overflow-x: hidden;  */
             /* y축 스크롤바 업애기 */
-            margin-top: -15px;
-            margin-left: 100px;
+            /* margin-top: -15px; */
+            /* margin-left: 100px; */
 
         }
-        .container {
-            /* scale: 95%; */
-            background-color: rgb(55, 55, 55);
+        .qa-container {
+            
+          
             border-radius: 10px;
-            width: 1600px;
-            height: 800px;
+            width: 100%;
+            min-height: 800px;
             margin-top: -50px;   
-            position: relative;
             left: 180px;
             top: 20px;         
         }
+
+        .qa-container > .container2 {
+            width: 95%; margin: auto;
+            background-color: rgb(55, 55, 55);
+        
+
+        }
+
         h2 {
             padding: 40px;
             margin-bottom: -30px;
@@ -63,7 +70,7 @@
             width: 550px;
             height: 1px;
             padding:25px;
-            margin-left: -50px;
+            margin-left: -58px;
             border-radius: 4px;
             border: 1px solid #ddd;
         }
@@ -91,46 +98,31 @@
         } */
         
         @media screen and (min-width: 300px) and (max-width: 767px){
-            body{
+            .qa-container{
                 background-color: rgb(55, 55, 55);
-                overflow-x:hidden;
-                /* overflow-y: hidden; */
-                margin-top: 80px;
-                
-                
-            }
-            th, td{
-                display: block;
-
-                /* display: flex; */
-                /* flex-direction: column; */
-                /* justify-content: space-between; */
-                /* flex-wrap: wrap; */
-            }
-            .container{
-                height: 950px;
-                padding-bottom: 10%;
-                position: absolute;
-                left: -310px;
-                top: -50px;
-                scale: 81%;
-                
-            }
-            h2{
-                padding-left: 15px;
-            }
-            td{
-                position: relative;
-                left: -250px;
-                top: -80px;;
+                /* display: block;
+                margin: 0 auto; */
             }
             table{
-                margin-top: -5%;
-                position: relative;
-                top: 50px;/
+                /* display: block; */
             }
-        } 
-        /* @media screen and (min-width: 1024px){
+            th{
+                font-size: smaller;
+            }
+            td{
+                
+            }
+            th tr{
+                display: block;
+            }
+            input[type="text"]{
+                font-size: small;
+                
+            }
+            footer{
+            
+            }
 
-        }  */
+        } 
+        
     

@@ -10,7 +10,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript"
         src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijdya8hea0"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,6 +18,8 @@
     <link rel="stylesheet" href="./css/headerFooter.css">
     <link rel="stylesheet" href="./css/mainpage.css">
     <link rel="stylesheet" href="./css/mapCard.css">
+    <link rel="stylesheet" href="./css/main/festivalitem.css">
+
 
     <style>
         * {
@@ -31,7 +32,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar__logo">
-            <a href="./index.html"><img src="./서울구석구석로고.png" alt=""></a>
+            <a href="./index.html"><img src="./img/서울구석구석로고.png" alt=""></a>
         </div>
         <ul class="navbar__menu">
             <li><a href="./event.html">행사리스트</a></li>
@@ -45,20 +46,26 @@
 
 
     <main>
-        <div>
-            <video src="./main_video.mp4" tyep="video.mp4" muted loop autoplay></video>
+        <div class="media">
+            <video src="./img/main_video.mp4" tyep="video.mp4" muted loop autoplay></video>
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="video_text">
+            <div class="video_text1">
+                Enjoy
+            </div>
+
+            <div class="video_text2">
+                Festival In Seoul
+            </div>
+        </div>
+
         <h2>행사 지역</h2>
 
         <div class="map_container">
+
             <div class="eventCard">
+
                 <div class="image"></div>
                 <div class="cardFont">
                     <div class="eventName"></div>
@@ -71,6 +78,7 @@
                         <div class="eventTime"></div>
                     </div>
                 </div>
+
             </div>
             <!-- 네이버 지도 -->
             <div id="map"></div>
@@ -83,67 +91,14 @@
         <h2>행사 리스트</h2>
 
         <div class="festival">
-            <div class="festival_container">
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
+            <div class="festival_container" id="festivalContainer">
 
             </div>
         </div>
-
         <br>
         <br>
 
-        <div class="festival">
-            <div class="festival_container">
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
 
-            </div>
-        </div>
         <br>
         <br>
         <br>
@@ -151,7 +106,7 @@
 
     <footer>
         <div class="footer_logo">
-            <img src="./서울구석구석로고.png" alt="">
+            <img src="./img/서울구석구석로고.png" alt="">
         </div>
         <div>
             <ul class="footer_email_box">
@@ -163,50 +118,9 @@
     </footer>
 
 
-    <script>
-        const toggleBtn = document.querySelector('.navbar__toggleBtn');
-        const menu = document.querySelector('.navbar__menu');
-        const sns = document.querySelector('.navbar__sns');
-
-        toggleBtn.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
-
+    <script src="./js/main/header.js"></script>
+    <script src="./js/main/festivalitem.js"></script>
     <script type="text/javascript">
-        $('.festival_container').slick({
-            dots: true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-
-            ]
-        });
 
         // 지도 출력
         let map = new naver.maps.Map('map', {
@@ -217,12 +131,24 @@
         // 서울시 공공데이터 불러오기 + 왼쪽 카드에 행사 정보 출력
         $.ajax({
             type: "GET",
-            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/30/",
+            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/100/",
             data: {},
             success: function (response) {
 
-                let rows = response["culturalEventInfo"]["row"]
+                let rows = [];
+                let row = response["culturalEventInfo"]["row"];
+
+                for (let i = 0; i < row.length; i++) {
+
+                    if (row[i].MAIN_IMG && row[i].MAIN_IMG != "" && row[i].IS_FREE && row[i].IS_FREE != "") {
+                        row[i].idx = i;
+                        rows.push(row[i]);
+                    }
+                }
+
                 let marker = [];
+
+                festivalItem(rows);
 
 
                 for (let i = 0; i < rows.length; i++) {
@@ -243,10 +169,10 @@
                         $(".eventTime").text(rows[i]["DATE"])
                         $(".eventCard").prepend(`<div class="codeName"></div>`)
                         $(".codeName").text(rows[i]["CODENAME"])
+                        $(".icon").attr("style", "display: block")
                         let imgUrl = rows[i]["MAIN_IMG"]
-                        $(".image").html(`<img src="${imgUrl}" class="festival_img"></img>`)
+                        $(".image").html(`<a href="./event.html?detail#${row[i].idx}"><img src="${imgUrl}" class="festival_img"></img></a>`)
                         let content = rows[i]["TITLE"]
-
                         let infoWindow = new naver.maps.InfoWindow({
                             content: content
                         })
@@ -264,7 +190,6 @@
         })
 
     </script>
-
 
 
 </body>
