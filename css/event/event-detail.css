@@ -3,6 +3,10 @@
     --btn-color : #333;
 }
 
+.detail-banner {
+    background-image: url('../../img/event-detail-banner_1920.jpg');
+}
+
 
 /** 행사 상세 페이지 wrap */
 #eventContainer > .event-detail-wrap {
@@ -10,19 +14,28 @@
     
 }
 
+
+#eventContainer > .detail-title {
+    font-weight: bold; font-size: 2em; padding: 0 2.5em;
+    line-height: 1.4; 
+
+}
 /** info box */
 #eventContainer > .event-detail-wrap > .info-box {
     display: flex;
     width: 100%;  margin-bottom: 3em;
+    
 
+}
+
+#eventContainer > .event-detail-wrap > .info-box > .img-box {
+    border: 1px solid #eee;
+    border-radius: 9px;
+    width: 45%; margin-right: 5%;
 }
 
 #eventContainer > .event-detail-wrap > .info-box > .img-box > img {
     width: 100%; height: 600px; object-fit: contain;
-}
-
-#eventContainer > .event-detail-wrap > .info-box > .img-box {
-    width: 45%; margin-right: 5%;
 }
 
 
@@ -77,6 +90,7 @@
 #eventContainer > .event-detail-wrap > .sub-info-box {
     width: 100%; min-height: 480px;
     margin-bottom: 5em; margin-top: 8em;
+    padding: 0 2.5em;
 }
 
 #eventContainer > .event-detail-wrap > .sub-info-box >  h3 {
@@ -112,6 +126,11 @@
 
     color: #333; font-size: 24px; line-height: 1.95;
     text-align: center;
+}
+
+#eventContainer > .event-detail-wrap > .event-detail-location > h5 {
+
+    color: #333; font-size: 1em; line-height: 1.95;
 }
 
 #eventContainer > .event-detail-wrap > .event-detail-location > .location-box {

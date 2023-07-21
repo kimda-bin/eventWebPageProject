@@ -2,16 +2,29 @@ header {
     top: 0;
 }
 
-.banner {
-    width: 100%; height: 200px; background-color: #333; color: #fff;
+.event-banner {
+    width: 100%; height: 250px; background-color: #333; color: #fff;
     margin-top: 88px; background-image: url('../../img/event-list-banner_1920.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex; color: #fff;
+    justify-content: center; align-items: center;
+    opacity: 0.85;
 }
-.detail-banner {
-    background-image: url('../../img/event-detail-banner_1920.jpg');
-}
+
+.event-banner  > .event-banner-text {
+    text-align: center;
+}   
+.event-banner  > .event-banner-text > h2 {
+    font-weight: bold; font-size: 2em;
+    line-height: 1.4; 
+}  
+
+.event-banner  > .event-banner-text > p {
+    font-weight: bold; font-size: 1em;
+    line-height: 1.4; 
+}  
 
 #eventContainer {
     width: 100%; min-height: 900px;  margin-bottom: 10em; 
