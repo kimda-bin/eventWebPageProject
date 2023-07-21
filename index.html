@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/initialize.css">
     <link rel="stylesheet" href="./css/headerFooter.css">
     <link rel="stylesheet" href="./css/mainpage.css">
@@ -20,46 +21,34 @@
             margin: 0;
             padding: 0;
         }
-
     </style>
 </head>
 
 <body>
-
-    <header class="header">
-        <ul class="nav menu_box">
-            <div class="nav menu">
-                <li><a id="nav_link" href="./event.html">행사리스트</a></li>
-                <li><a id="nav_link" href="./qa.html">문의사항</a></li>
-            </div>
-
-            <div>
-                <li class="nav logo">
-                    <a href="./index.html"><img src="./서울구석구석로고.png"></a>
-                </li>
-            </div>
-
-            <div class="nav menu">
-                <li><a id="nav_link" href="./login.html">LOGIN</a></li>
-                <li><a id="nav_link" href="./join.html">JOIN</a></li>
-            </div>
-            
-            <!-- <div class="responsive_nav">
-                <li><a id="nav_link" href="./event.html">행사리스트</a></li>
-                <li><a id="nav_link" href="./qa.html">문의사항</a></li>
-                <li><a id="nav_link" href="./login.html">LOGIN</a></li>
-                <li><a id="nav_link" href="./join.html">JOIN</a></li>
-            </div> -->
-
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="./index.html"><img src="./서울구석구석로고.png" alt=""></a>
+        </div>
+        <ul class="navbar__menu">
+            <li><a href="./event.html">행사리스트</a></li>
+            <li><a href="./qa.html">문의사항</a></li>
+            <li><a href="./login.html">로그인</a></li>
+            <li><a href="./join.html">회원가입</a></li>
         </ul>
+      
+        <a href="#" class="navbar__toggleBtn"><i class="fas fa-bars"></i> </a>
+    </nav>
 
-    </header>
 
     <main>
         <div>
             <video src="./main_video.mp4" tyep="video.mp4" muted loop autoplay></video>
         </div>
 
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <h2>행사 지역</h2>
@@ -75,6 +64,8 @@
 
         <br>
         <br>
+        <br>
+        
         <h2>행사 리스트</h2>
 
         <div class="festival">
@@ -107,6 +98,9 @@
             </div>
         </div>
 
+        <br>
+        <br>
+        
         <div class="festival">
             <div class="festival_container">
                 <div class="festival_list">
@@ -136,6 +130,9 @@
 
             </div>
         </div>
+        <br>
+        <br>
+        <br>
     </main>
 
     <footer>
@@ -151,6 +148,16 @@
         </div>
     </footer>
 
+
+    <script>
+        const toggleBtn = document.querySelector('.navbar__toggleBtn');
+        const menu = document.querySelector('.navbar__menu');
+        const sns = document.querySelector('.navbar__sns');
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
 
     <script type="text/javascript">
         $('.festival_container').slick({
@@ -187,15 +194,10 @@
             ]
         });
 
-        // let logo = document.querySelector(".nav.logo>a>img")
-        // logo.addEventListener("mouseover", () => {
-        //    document.querySelector(".responsive_nav").style.display = "block"
-        // });
-        // logo.addEventListener("mouseout", () => {
-        //    document.querySelector(".responsive_nav").style.display = "none"
-        // });
-
     </script>
+
+
+
 </body>
 
 </html>
