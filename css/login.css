@@ -1,168 +1,125 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(69, 69, 69);
+    flex-direction: column;
+}
 
-        body{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap; 
-            /* 아이템을 수직 방향으로 중앙 정렬. */
-            scale: 160%;
-            background-color: rgb(69, 69, 69); 
-            padding-top: 100px;
-            overflow-x: hidden;
-            position: absolute;
-            left: 600px;
-            top: -160px
-            
-        }
-        
-        .container{
-            width: 200px;
-            height: 250px;
-            background-color: rgb(55, 55, 55);
-            padding-left: 25px;
-            border-radius: 3%;
-            display: block;
-            margin-top: 200px;
-            margin-right: 120px;
-            scale: 125%;
-            position: absolute;
-            left: 0px;
-            top: 0px;
-            /* margin: 0% auto; */
-            
-        }
-        .wrap1{
-            width:  calc(50% - 24px);
-        }
-        .wrap2{
-            padding-top: 56.25%;
-            position: relative;
-            width: 100%;
-        }
-        .content{
-            height: 100%;
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-        }
-        #lg{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 25px;
-            width: 190px;
-            margin-top: 15px;
-            color: white;
-            background-color: rgb(255, 91, 91);
-            padding-left: 48%;
-            padding-right: 42%;
-            cursor: pointer; 
-            border-radius: 3px;
-            position: relative;
-            left: -20px;;
-            
-        }
-        #lg:hover{
-            background-color: rgb(255, 21, 21);
-        }
-        h2{ 
-            color: white;
-            text-align: left;
-            position: relative;
-        
-            left: -20px;
-            
-        }
-        /* #id{
-            margin-right: -5%;
-        } */
-        input[type="text"]{
-            position:relative;
-            left: -22px;
-            margin-top: 1px;
-            
-            border-radius: 3px;            
+.container {
+    width: 250px;
+    height: 300px;
+    background-color: rgb(55, 55, 55);
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+}
 
-        }
-        input[type="checkbox"]{
-            position: relative;
-            left: -15px;
-            
-            
-        }
-        label{
-            position: relative;
-            left: -13px;
-            top: -2px;
-        }
-        ::placeholder
-        {
-            font-size: xx-small;
-        }
-        #checkbox{
-            display: flex;
-            align-items: center;
-            color: white;
-            font-size: xx-small;
-            width: 100px;
-            margin-top: 5px;
-            margin-left: -5px;
-        }
-        #checkbox label{
-            margin-top: 5%;
-            margin-left: 3%;
-            
-        }
-        @media screen and (min-width: 300px) and (max-width: 767px){
-            body{
-                /* width: 100%; */
-                /* height: 100%; */
-                background-color: rgb(55, 55, 55);
-                position: relative;
-                left: 200px;
-                top: -250px;
-            }
-            form{
-                /* width: 200px; */
-                /* height: 250px; */
-                border: 0.5px solid rgb(95, 95, 95);
-                margin: 15% auto;
-               
-            }
-            h2{
-                position: relative;
-                left: -20px;
-            }
-        
-            
-        }
-        #text{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            font-size: 7px;
-            color: rgb(180, 180, 180);
-            margin-top: 5px;
-            margin-left: -5px;;
-            width: 200px;
-            position: relative;
-            left: -25px;
+.cross {
+    margin-left: 230px;
+    margin-bottom: 10px;
+    width: 15px;
+    height: 15px;
+}
 
-        }
-        #text > a {
-            color: rgb(226, 225, 225);
-            font-size: 8px;
-            margin-right: 6px;
-            padding-right: 16px;
-            position: relative;
-            left: 30px;
-            top: -1px;
-            
-        }
-        /* @media screen and (min-width: 1024px){
+.closeBox {
+    display: flex;
+}
+
+.content {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#lg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 100%;
+    text-align: center;
+    font-size: small;
+    color: white;
+    background-color: rgb(255, 91, 91);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.inputMargin {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#lg:hover {
+    background-color: rgb(255, 21, 21);
+}
+
+h2 {
+    color: white;
+
+}
+
+
+::placeholder {
+    font-size: small;
+}
+
+#checkbox {
+    display: flex;
+    color: white;
+    font-size: xx-small;
+    margin-top: 10px;
+}
+
+#checkbox label {
+    margin-left: 3%;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+    body {
+        /* width: 100%; */
+        /* height: 100%; */
+        background-color: rgb(55, 55, 55);
+        position: relative;
+        left: 200px;
+        top: -250px;
+    }
+
+    form {
+        /* width: 200px; */
+        /* height: 250px; */
+        border: 0.5px solid rgb(95, 95, 95);
+        margin: 15% auto;
+
+    }
+
+    h2 {
+        position: relative;
+        left: -20px;
+    }
+
+
+}
+
+#text {
+    display: flex;
+    font-size: 5px;
+    color: rgb(180, 180, 180);
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#text>a {
+    color: rgb(226, 225, 225);
+    font-size: 7px;
+}
+
+/* @media screen and (min-width: 1024px){
 
         } */
-
-    
