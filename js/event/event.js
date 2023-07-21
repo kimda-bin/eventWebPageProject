@@ -1,8 +1,5 @@
-
-
-
-
-
+ // 행사 리스트 html 생성 및 data 바인딩
+ // datalist : 행사 리스트 data
 const eventItem = (datalist) => {
     // let eventItemWrap = $('#eventItemWrap');
     const priceColor = (IS_FREE) => {
@@ -49,7 +46,7 @@ const eventItem = (datalist) => {
     }
 }
 
-
+ // 행사 리스트 필터 html 생성
 const createEventFilter = (codename,price) => {
 
     // 클래식,콘서트,축제,전시/미술, 영화, 뮤지컬/오페라, 무용, 독주/독창회, 기타, 국악, 교육/체험
@@ -69,6 +66,7 @@ const createEventFilter = (codename,price) => {
 }
 
 
+// 행사 리스트 무한 스크롤 html 생성
 const eventItemAdd = (datalist) => {
 
     const length = $('#eventItemWrap').children().length - 1;
@@ -78,29 +76,20 @@ const eventItemAdd = (datalist) => {
 }
 
 
-
+// 행사 리스트 필터 기능
 const eventFilterList = async (kind, filter) => {
-    console.log(kind, filter);
 
-    // $('#eventListCodenameSelect');
-    // $('#eventListPiceSelect');
-
-    let domChild = $('#eventItemWrap').children();
 
     $('#eventItemWrap').empty();
-    // for (let i=0; i<domChild.length; i++) {
-    //     domChild[i].remove();
-    // }
-    console.log('여기', $('#eventItemWrap').children());
     
     if (kind === '분류') {
 
         dataFilterlist = await Array(0);
-        console.log('dataFilterlist', dataFilterlist.length);
-        console.log('dataFilterlist', dataFilterlist);
+
        if (filter === '전체') {
-        console.log(datalist);
+
             eventItem(datalist);
+            
        } else {
 
             for (let i=0; i < datalist.length; i++) {
@@ -110,7 +99,7 @@ const eventFilterList = async (kind, filter) => {
                      dataFilterlist.push(datalist[i]);
                 }
             }
-            console.log(dataFilterlist);
+           
             eventItem(dataFilterlist);
        }
 
@@ -119,23 +108,33 @@ const eventFilterList = async (kind, filter) => {
 
     if ( kind === '가격') {
 
+  
         if (dataFilterlist.length === 0) { // 분류를 선택 x
 
-            for (let i=0; i < datalist.length; i++) {
-                if (datalist[i].IS_FREE === filter) {
-                    dataFilterlist.push(datalist[i]);
-                } 
+            if (filter === '전체') {
+
+                eventItem(datalist);
+
+            } else {
+
+                dataFilterlistPirce = await Array(0);
+                for ( let i=0; i < datalist.length; i++) {
+                    
+                    if (datalist[i].IS_FREE === filter) {
+                        dataFilterlistPirce.push(datalist[i]);
+                    }
+                }
+                eventItem(dataFilterlistPirce);
             }
-            console.log('dataFilterlist',dataFilterlist);
-            eventItem(dataFilterlist);
+   
 
         } else {
 
             dataFilterlistPirce = await Array(0);
-            console.log('filter',filter)
             if (filter === '전체') {
                 
                 eventItem(dataFilterlist);
+
             } else {
 
                 for (let i=0; i < dataFilterlist.length; i++) {

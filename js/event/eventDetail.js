@@ -1,5 +1,7 @@
 
 
+ // 디테일 html 생성 및 data 바인딩
+ // index :  리스트 idx , datalist : 행사 리스트 data
 const eventDetailDatavind = (index, datalist) => {
 
     /**
@@ -33,6 +35,7 @@ const eventDetailDatavind = (index, datalist) => {
 }
 
 
+ // 디테일 행사정보
 const createEventDetailInfo = (DATA) => {
 
     let typeTitle = ["장소", "기간", "시간", '대상', '요금', "문의"];
@@ -71,7 +74,7 @@ const createEventDetailInfo = (DATA) => {
 
     $('#eventDetailWrap').append(`
 
-        <h2>${DATA.CODENAME}(${DATA.THEMECODE})</h2>
+        <h2 class = "detail-title">${DATA.CODENAME}(${DATA.THEMECODE})</h2>
         <div id="eventDtailInfo" class="info-box">
             <div class="img-box">
                 <img src="${DATA.MAIN_IMG}" alt="${DATA.TITLE}">
@@ -91,7 +94,7 @@ const createEventDetailInfo = (DATA) => {
 
 
 
-
+ // 디테일 행사 세부정보
 const createEventDetailSubinfo = (DATA) => {
 
     
@@ -128,14 +131,14 @@ const createEventDetailSubinfo = (DATA) => {
     `)
 }
 
-
+ // 디테일 행사 지도
 const createEventDetailLocation = (DATA) => {
  
     $('#eventDetailWrap').append(`
         <div class="event-detail-location">
             <h3>위치안내</h3>
+            <h5>${DATA.PLACE}</h5>
             <div id="naverMap" class="location-box">
-            
             </div>
         </div>
     `)

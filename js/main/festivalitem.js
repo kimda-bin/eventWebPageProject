@@ -48,6 +48,7 @@ const festivalItem = (datalist) => {
         dots: true,
         infinite: false,
         speed: 300,
+        infinite: true,
         slidesToShow: 4,
         slidesToScroll: 4,
         responsive: [
