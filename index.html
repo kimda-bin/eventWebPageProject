@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="./css/headerFooter.css">
     <link rel="stylesheet" href="./css/mainpage.css">
     <link rel="stylesheet" href="./css/mapCard.css">
+    <link rel="stylesheet" href="./css/main/festivalitem.css">
+
 
     <style>
         * {
@@ -83,67 +85,14 @@
         <h2>행사 리스트</h2>
 
         <div class="festival">
-            <div class="festival_container">
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-
+            <div class="festival_container" id="festivalContainer">
+               
             </div>
         </div>
-
         <br>
         <br>
 
-        <div class="festival">
-            <div class="festival_container">
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-                <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
-                </div>
-
-            </div>
-        </div>
+        
         <br>
         <br>
         <br>
@@ -163,51 +112,10 @@
     </footer>
 
 
-    <script>
-        const toggleBtn = document.querySelector('.navbar__toggleBtn');
-        const menu = document.querySelector('.navbar__menu');
-        const sns = document.querySelector('.navbar__sns');
-
-        toggleBtn.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
-
+    <script src="./js/main/header.js"></script>
+    <script src="./js/main/festivalitem.js"></script>
     <script type="text/javascript">
-        $('.festival_container').slick({
-            dots: true,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-
-            ]
-        });
-
+       
         // 지도 출력
         let map = new naver.maps.Map('map', {
             center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576),
@@ -224,6 +132,8 @@
                 let rows = response["culturalEventInfo"]["row"]
                 let marker = [];
 
+                festivalItem(rows);
+               
 
                 for (let i = 0; i < rows.length; i++) {
                     marker[i] = new naver.maps.Marker({
@@ -264,7 +174,6 @@
         })
 
     </script>
-
 
 
 </body>
