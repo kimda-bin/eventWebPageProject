@@ -4,7 +4,6 @@
 }
 
 
-
 /** 행사 상세 페이지 wrap */
 #eventContainer > .event-detail-wrap {
     width: 85%; height: 100%; margin: auto;
@@ -77,32 +76,36 @@
 /** 서브 정보 */
 #eventContainer > .event-detail-wrap > .sub-info-box {
     width: 100%; min-height: 480px;
-
+    margin-bottom: 5em; margin-top: 8em;
 }
 
-#eventContainer > .event-detail-wrap > .sub-info-box > h3 {
+#eventContainer > .event-detail-wrap > .sub-info-box >  h3 {
 
     color: #333; font-size: 24px; line-height: 1.95;
     text-align: center;
-    
 }
 
-#eventContainer > .event-detail-wrap > .sub-info-box > h6 {
+#eventContainer > .event-detail-wrap > .sub-info-box > .txt-box {
+
+    width: 100%; min-height: 54px; padding: 0.5em 0;
+}
+
+
+#eventContainer > .event-detail-wrap > .sub-info-box > .txt-box > h6 {
     margin: 20px 0 0; font-weight: 600;
     color: #333; font-size: 16px; line-height: 1.75;
 }
 
-#eventContainer > .event-detail-wrap > .sub-info-box > h5 > p {
+#eventContainer > .event-detail-wrap > .sub-info-box > .txt-box > h5 > p {
     color: #333; font-weight: 400;
     word-wrap: break-word; white-space: pre-wrap;
     font-size: 16px;line-height: 1.75;
 }
 
 /** 위치 안내 **/
-
 #eventContainer > .event-detail-wrap > .event-detail-location {
+    width: 75%; margin: auto;  margin-top: 5em; margin-bottom: 15em;
 
-    width: 100%;  margin-bottom: 2em;
 }
 
 #eventContainer > .event-detail-wrap > .event-detail-location > h3 {
@@ -114,7 +117,16 @@
 #eventContainer > .event-detail-wrap > .event-detail-location > .location-box {
 
     width: 100%; height: 500px; background-color: #eee;
+    border: 1px solid #eee; 
 }
+
+
+#eventContainer > .event-detail-wrap > .event-detail-location > .location-box >.location-map{
+
+    width: 100%; height: 500px; 
+}
+
+
 
 
 

@@ -27,10 +27,19 @@
         width: 100%;
     }
 
+    /** 위치 안내 **/
+    #eventContainer > .event-detail-wrap > .event-detail-location {
+        width: 90%; margin: auto;
+    }
+
 }
 
 @media screen and (min-width:757px) and (max-width:1024px) {
 
+     /** 위치 안내 **/
+     #eventContainer > .event-detail-wrap > .event-detail-location {
+        width: 85%; margin: auto;
+    }
 }
 
 
