@@ -31,7 +31,7 @@
 <body>
     <nav class="navbar">
         <div class="navbar__logo">
-            <a href="./index.html"><img src="./서울구석구석로고.png" alt=""></a>
+            <a href="./index.html"><img src="./img/서울구석구석로고.png" alt=""></a>
         </div>
         <ul class="navbar__menu">
             <li><a href="./event.html">행사리스트</a></li>
@@ -45,16 +45,20 @@
 
 
     <main>
-        <div>
-            <video src="./main_video.mp4" tyep="video.mp4" muted loop autoplay></video>
+        <div class="media">
+            <video src="./img/main_video.mp4" tyep="video.mp4" muted loop autoplay></video>
+        </div>
+        
+        <div class="video_text">
+            <div class="video_text1">
+                Enjoy
+            </div>
+
+            <div class="video_text2">
+                Festival In Seoul
+            </div>
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <h2>행사 지역</h2>
 
         <div class="map_container">
@@ -85,28 +89,28 @@
         <div class="festival">
             <div class="festival_container">
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
 
             </div>
@@ -118,28 +122,28 @@
         <div class="festival">
             <div class="festival_container">
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
                 <div class="festival_list">
-                    <img src="./카드이미지1.jpg" alt="">
+                    <img src="./img/카드이미지1.jpg" alt="">
                 </div>
 
             </div>
@@ -151,7 +155,7 @@
 
     <footer>
         <div class="footer_logo">
-            <img src="./서울구석구석로고.png" alt="">
+            <img src="./img/서울구석구석로고.png" alt="">
         </div>
         <div>
             <ul class="footer_email_box">
@@ -166,7 +170,7 @@
     <script>
         const toggleBtn = document.querySelector('.navbar__toggleBtn');
         const menu = document.querySelector('.navbar__menu');
-        const sns = document.querySelector('.navbar__sns');
+
 
         toggleBtn.addEventListener('click', () => {
             menu.classList.toggle('active');
