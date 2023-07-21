@@ -2,7 +2,7 @@
         body {
             background-color: white;
             scale: 80%;
-            overflow-x: hidden; 
+            /* overflow-x: hidden;  */
             /* y축 스크롤바 업애기 */
             margin-top: -15px;
             margin-left: 100px;
@@ -94,7 +94,7 @@
             body{
                 background-color: rgb(55, 55, 55);
                 overflow-x:hidden;
-                overflow-y: hidden;
+                /* overflow-y: hidden; */
                 margin-top: 80px;
                 
                 
