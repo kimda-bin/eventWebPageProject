@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>서울구석구석 행사페이지</title>
-    <link href="./css/initialize.css" rel="stylesheet"/>
-    <link href="./css/headerFooter.css" rel="stylesheet"/>
-    <link href="./css/event/event-list.css" rel="stylesheet"/>
-    <link href="./css/event/event-detail.css" rel="stylesheet"/>
-    <link href="./css/event/responsive/event-list-responsive.css" rel="stylesheet"/>
-    <link href="./css/event/responsive/event-detail-responsive.css" rel="stylesheet"/>
+    <link href="./css/initialize.css" rel="stylesheet" />
+    <link href="./css/headerFooter.css" rel="stylesheet" />
+    <link href="./css/event/event-list.css" rel="stylesheet" />
+    <link href="./css/event/event-detail.css" rel="stylesheet" />
+    <link href="./css/event/responsive/event-list-responsive.css" rel="stylesheet" />
+    <link href="./css/event/responsive/event-detail-responsive.css" rel="stylesheet" />
 
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script type="text/javascript"
         src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijdya8hea0"></script>
 </head>
 
 <body>
-    <header class="header">
-        <ul class="nav menu_box">
-            <div class="nav menu">
-                <li>행사리스트</li>
-                <li>문의사항</li>
-            </div>
-            <div>
-                <li class="nav logo">
-                    <img src="./서울구석구석로고.png">
-                </li>
-            </div>
-            <div class="nav menu">
-                <li>LOGIN</li>
-                <li>SIGNUP</li>
-            </div>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="./index.html"><img src="./서울구석구석로고.png" alt=""></a>
+        </div>
+        <ul class="navbar__menu">
+            <li><a href="./event.html">행사리스트</a></li>
+            <li><a href="./qa.html">문의사항</a></li>
+            <li><a href="./login.html">로그인</a></li>
+            <li><a href="./join.html">회원가입</a></li>
         </ul>
-    </header>
+
+        <a href="#" class="navbar__toggleBtn"><i class="fas fa-bars"></i> </a>
+    </nav>
 
     <main>
         <section class="banner"></section>
@@ -41,15 +42,15 @@
         <section id="eventContainer" class="container">
             <div id="eventListFillter" class="event-list-fillter">
                 <select id="eventListCodenameSelect" onchange="eventFilterList('분류', this.value)">
-                   <option value="" disabled selected>분류</option>
+                    <option value="" disabled selected>분류</option>
                 </select>
                 <select id="eventListPiceSelect" onchange="eventFilterList('가격', this.value)">
                     <option value="" disabled selected>가격</option>
                 </select>
             </div>
 
-            <div id="eventItemWrap" class="event-item-wrap" ></div>
-            <div id="eventDetailWrap" class="event-detail-wrap" style="display: none;" ></div>
+            <div id="eventItemWrap" class="event-item-wrap"></div>
+            <div id="eventDetailWrap" class="event-detail-wrap" style="display: none;"></div>
         </section>
     </main>
 
@@ -65,8 +66,8 @@
             </ul>
         </div>
     </footer>
-    
-   
+
+
     <script src="./js/event/event.js"></script>
     <script src="./js/event/eventDetail.js"></script>
     <script src="./js/fetch.js"></script>
@@ -74,4 +75,5 @@
 
 
 </body>
+
 </html>

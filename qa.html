@@ -1,90 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문의사항</title>
     <link rel="stylesheet" href="./css/initialize.css">
     <link rel="stylesheet" href="./css/qa.css">
-    <link rel="stylesheet" href="./css/qa_headerFooter.css">
-    
-    
-    </head>
+    <link rel="stylesheet" href="./css/headerFooter.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
 <body>
 
-    <header class="header">
-        <ul class="nav menu_box">
-            <div class="nav menu">
-                <li>행사리스트</li>
-                <li>문의사항</li>
-            </div>
-
-            <div>
-                <li class="nav logo">
-                    <img src="./서울구석구석로고.png">
-                </li>
-            </div>
-
-            <div class="nav menu">
-                <li>LOGIN</li>
-                <li>SIGNUP</li>
-            </div>
-
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="./index.html"><img src="./서울구석구석로고.png" alt=""></a>
+        </div>
+        <ul class="navbar__menu">
+            <li><a href="./event.html">행사리스트</a></li>
+            <li><a href="./qa.html">문의사항</a></li>
+            <li><a href="./login.html">로그인</a></li>
+            <li><a href="./join.html">회원가입</a></li>
         </ul>
 
-    </header>
+        <a href="#" class="navbar__toggleBtn"><i class="fas fa-bars"></i> </a>
+    </nav>
     <div class="container">
         <h2>문의하기</h2>
         <div class="container2">
-        <table>
-            <tbody>
-                <tr>
-                    <th><span id="item">업체명</span>
-                        <span id="star">*</span>
-                    </th>
-                    <td>
-                        <input type="text" maxlength="100" placeholder="업체명을 입력하세요.">
-                    </td>
-                    <th><span id="item">담당자명</span>
-                        <span id="star">*</span>
-                    </th>
-                    <td>
-                        <input type="text" maxlength="100" placeholder="담당자명을 입력하세요.">
-                    </td>
-                </tr>
-                <tr>
-                    <th><span id="item itemc">휴대폰</span> 
-                        <span id="star">*</span>
-                    </th>
-                    <td class="cellphone">
-                        <input class="box " type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요." >
-                    </td>
-                <!-- </tr>
+            <table>
+                <tbody>
+                    <tr>
+                        <th><span id="item">업체명</span>
+                            <span id="star">*</span>
+                        </th>
+                        <td>
+                            <input type="text" maxlength="100" placeholder="업체명을 입력하세요.">
+                        </td>
+                        <th><span id="item">담당자명</span>
+                            <span id="star">*</span>
+                        </th>
+                        <td>
+                            <input type="text" maxlength="100" placeholder="담당자명을 입력하세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span id="item itemc">휴대폰</span>
+                            <span id="star">*</span>
+                        </th>
+                        <td class="cellphone">
+                            <input class="box " type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요.">
+                        </td>
+                        <!-- </tr>
                 <tr> -->
-                    <th><span id="item">이메일</span>
-                        <span id="star">*</span>
-                    </th>
-                    <td class="email">
-                        <input type="text" placeholder="이메일을 입력하세요.">
-                    </td>
-                </tr>
+                        <th><span id="item">이메일</span>
+                            <span id="star">*</span>
+                        </th>
+                        <td class="email">
+                            <input type="text" placeholder="이메일을 입력하세요.">
+                        </td>
+                    </tr>
 
-                <tr class="inqury1">
-                    <th><span id="item">내용</span> 
-                        <span id="star">*</span>
-                    </th>
-                    <td>
-                        <!-- <div class="inquiry"> -->
-                        <input type="text" placeholder="문의내용을 입력하세요." style="height: 400px;">
-                       
-                        <!-- </div>     -->
-                    </td>
-                </tr>
-            </tbody>
-        </table>  
-        </div>  
+                    <tr class="inqury1">
+                        <th><span id="item">내용</span>
+                            <span id="star">*</span>
+                        </th>
+                        <td>
+                            <!-- <div class="inquiry"> -->
+                            <input type="text" placeholder="문의내용을 입력하세요." style="height: 400px;">
+
+                            <!-- </div>     -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    
+
     <footer>
         <div class="footer_logo">
             <img src="./서울구석구석로고.png" alt="">
@@ -97,6 +92,7 @@
             </ul>
         </div>
     </footer>
-    
+
 </body>
+
 </html>
