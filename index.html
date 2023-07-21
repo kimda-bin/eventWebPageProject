@@ -10,7 +10,6 @@
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript"
         src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijdya8hea0"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
         integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -58,7 +57,9 @@
         <h2>행사 지역</h2>
 
         <div class="map_container">
+
             <div class="eventCard">
+
                 <div class="image"></div>
                 <div class="cardFont">
                     <div class="eventName"></div>
@@ -71,6 +72,7 @@
                         <div class="eventTime"></div>
                     </div>
                 </div>
+
             </div>
             <!-- 네이버 지도 -->
             <div id="map"></div>
@@ -217,11 +219,21 @@
         // 서울시 공공데이터 불러오기 + 왼쪽 카드에 행사 정보 출력
         $.ajax({
             type: "GET",
-            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/30/",
+            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/100/",
             data: {},
             success: function (response) {
 
-                let rows = response["culturalEventInfo"]["row"]
+                let rows = [];
+                let row = response["culturalEventInfo"]["row"];
+
+                for (let i = 0; i < row.length; i++) {
+
+                    if (row[i].MAIN_IMG && row[i].MAIN_IMG != "" && row[i].IS_FREE && row[i].IS_FREE != "") {
+                        row[i].idx = i;
+                        rows.push(row[i]);
+                    }
+                }
+
                 let marker = [];
 
 
@@ -243,10 +255,10 @@
                         $(".eventTime").text(rows[i]["DATE"])
                         $(".eventCard").prepend(`<div class="codeName"></div>`)
                         $(".codeName").text(rows[i]["CODENAME"])
+                        $(".icon").attr("style", "display: block")
                         let imgUrl = rows[i]["MAIN_IMG"]
-                        $(".image").html(`<img src="${imgUrl}" class="festival_img"></img>`)
+                        $(".image").html(`<a href="./event.html?detail#${row[i].idx}"><img src="${imgUrl}" class="festival_img"></img></a>`)
                         let content = rows[i]["TITLE"]
-
                         let infoWindow = new naver.maps.InfoWindow({
                             content: content
                         })
