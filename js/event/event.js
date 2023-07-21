@@ -1,5 +1,9 @@
-const eventItem = (datalist) => {
 
+
+
+
+
+const eventItem = (datalist) => {
     // let eventItemWrap = $('#eventItemWrap');
     const priceColor = (IS_FREE) => {
         // orange : 무료, gray : 유료
