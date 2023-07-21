@@ -13,15 +13,17 @@
           
             border-radius: 10px;
             width: 100%;
-            min-height: 800px;
+            min-height: 770px;
             margin-top: -50px;   
-            left: 180px;
-            top: 20px;         
+                
         }
 
         .qa-container > .container2 {
-            width: 95%; margin: auto;
+            width: 85%; margin: auto;
             background-color: rgb(55, 55, 55);
+            border-radius: 10px;
+            position: relative;
+            top: 40px;
         
 
         }
@@ -29,7 +31,7 @@
         h2 {
             padding: 40px;
             margin-bottom: -30px;
-            color: white;
+            color: rgb(55, 55, 55);
             font-size: 44px;
         }
     
@@ -45,7 +47,7 @@
 
         
         th, td {
-            padding: 25px;
+            padding: 16px;
             
             text-align: center;
             vertical-align: top;
@@ -55,62 +57,35 @@
         }
     
         th {
-            width: 150px;
-            font-size: 22px;
+            width: 100px;
+            font-size: 15px;
         }
-        
     
     
         #star {
             color: red;
+            font-size: 12px;
         }
     
         input[type="text"]{
-            /* width: 95.5%; */
-            width: 550px;
+            
+            width: 500px;
             height: 1px;
-            padding:25px;
+            padding:18px;
             margin-left: -58px;
             border-radius: 4px;
             border: 1px solid #ddd;
         }
-       /* .cellphone input[type="text"]{
-            width: 550px;
-          
-       }
-        .email input[type="text"]{
-        width: 550px;
-      
-        } */
-        .inquiry input[type="text"]{ 
-            width: 600px;
-  
-        } 
-        
        
-        /* #inquiry{
-            height: 150px;
-        } */
-        /* .box{
-
-            width: 1000px;
-            
-        } */
-        
         @media screen and (min-width: 300px) and (max-width: 767px){
             .qa-container{
                 background-color: rgb(55, 55, 55);
                 /* display: block;
                 margin: 0 auto; */
             }
-            table{
-                /* display: block; */
-            }
+            
             th{
                 font-size: smaller;
-            }
-            td{
-                
             }
             th tr{
                 display: block;
@@ -119,10 +94,34 @@
                 font-size: small;
                 
             }
-            footer{
             
+            /* .qa-table{
+                margin: 0 -10px;
+            } */
+            .qa-table th,  .qa-table td {
+                width: 100%;
+                display: block;
+                /* border-top: none; */
             }
-
+              /* .qa-table tr:first-child th {
+                border-top: 1px solid #ddd;
+              } */
+            
+            input[type="text"]{
+                width: 450px;
+                position: relative;
+                left: 25px;
+                
+            }
+            span{
+                position:relative;
+                left:-200px;
+            }
+            @media screen and (min-width: 768px) and (max-width: 1024px){
+                input[type="text"]{
+                 width: 180px;
+                    
+                }
         } 
         
     
