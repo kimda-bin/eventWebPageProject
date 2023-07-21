@@ -4,10 +4,12 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: rgb(69, 69, 69);
-    scale: 180%;
+    scale: 160%;
     /* display: block; */
     margin: 0% auto;
     padding-top: 100px;
+    position: relative;
+    top: 50px
 }
 input[type="text"]{
     width: 90%;
@@ -58,6 +60,9 @@ h2{
         margin-top: 50px;
         scale: 150%;
         padding-bottom: 400px;
+        position: absolute;
+        left: 120px;
+        top: 0px;
         
     }
     body{
