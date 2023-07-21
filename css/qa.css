@@ -1,62 +1,103 @@
 
         body {
-            background-color: rgb(69, 69, 69);
-            scale: 90%;
-            /* margin-top: -20px; */
+            background-color: white;
+            scale: 80%;
+            overflow-x: hidden; 
+            /* y축 스크롤바 업애기 */
+            margin-top: -15px;
+            margin-left: 100px;
 
         }
         .container {
-            scale: 95%;
+            /* scale: 95%; */
             background-color: rgb(55, 55, 55);
             border-radius: 10px;
-            
+            width: 1600px;
+            height: 800px;
+            margin-top: -50px;   
+            position: relative;
+            left: 180px;
+            top: 20px;         
         }
         h2 {
             padding: 40px;
             margin-bottom: -30px;
             color: white;
+            font-size: 44px;
         }
     
         table { 
+            
             border-collapse: collapse; 
             /* collapse를 사용하여 테이블의 border 볗합 */
             width: 100%;
             /* margin-bottom: 30px; */
+            
         }
+        
 
         
         th, td {
             padding: 25px;
-            text-align: left;
+            
+            text-align: center;
             vertical-align: top;
             border-bottom: 1px solid #ddd;
             color: white;
+            
         }
     
         th {
-            width: 75px;
+            width: 150px;
+            font-size: 22px;
         }
+        
     
-        span {
+    
+        #star {
             color: red;
         }
     
         input[type="text"]{
-            width: 95.5%;
-            padding:10px;
+            /* width: 95.5%; */
+            width: 550px;
+            height: 1px;
+            padding:25px;
+            margin-left: -50px;
             border-radius: 4px;
             border: 1px solid #ddd;
         }
-        #inquiry{
+       /* .cellphone input[type="text"]{
+            width: 550px;
+          
+       }
+        .email input[type="text"]{
+        width: 550px;
+      
+        } */
+        .inquiry input[type="text"]{ 
+            width: 600px;
+  
+        } 
+        
+       
+        /* #inquiry{
             height: 150px;
-        }
-        .box{
-            width: 225.5%;
-        }
+        } */
+        /* .box{
+
+            width: 1000px;
+            
+        } */
         
         @media screen and (min-width: 300px) and (max-width: 767px){
             body{
                 background-color: rgb(55, 55, 55);
+                overflow-x:hidden;
+                overflow-y: hidden;
+                margin-top: 80px;
+                
+                
             }
             th, td{
                 display: block;
@@ -69,16 +110,27 @@
             .container{
                 height: 950px;
                 padding-bottom: 10%;
+                position: absolute;
+                left: -310px;
+                top: -50px;
+                scale: 81%;
                 
             }
             h2{
                 padding-left: 15px;
             }
+            td{
+                position: relative;
+                left: -250px;
+                top: -80px;;
+            }
             table{
                 margin-top: -5%;
+                position: relative;
+                top: 50px;/
             }
         } 
-        @media screen and (min-width: 1024px){
+        /* @media screen and (min-width: 1024px){
 
-        } 
+        }  */
     

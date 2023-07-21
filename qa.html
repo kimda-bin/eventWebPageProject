@@ -1,63 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>문의사항</title>
+    <link rel="stylesheet" href="./css/initialize.css">
     <link rel="stylesheet" href="./css/qa.css">
+    <link rel="stylesheet" href="./css/qa_headerFooter.css">
+    
     
     </head>
 <body>
 
-    <h2>문의하기</h2>
+    <header class="header">
+        <ul class="nav menu_box">
+            <div class="nav menu">
+                <li>행사리스트</li>
+                <li>문의사항</li>
+            </div>
+
+            <div>
+                <li class="nav logo">
+                    <img src="./서울구석구석로고.png">
+                </li>
+            </div>
+
+            <div class="nav menu">
+                <li>LOGIN</li>
+                <li>SIGNUP</li>
+            </div>
+
+        </ul>
+
+    </header>
     <div class="container">
+        <h2>문의하기</h2>
+        <div class="container2">
         <table>
             <tbody>
                 <tr>
-                    <th>업체명 
-                        <span>*</span>
+                    <th><span id="item">업체명</span>
+                        <span id="star">*</span>
                     </th>
                     <td>
                         <input type="text" maxlength="100" placeholder="업체명을 입력하세요.">
                     </td>
-                    <th>담당자명 
-                        <span>*</span>
+                    <th><span id="item">담당자명</span>
+                        <span id="star">*</span>
                     </th>
                     <td>
                         <input type="text" maxlength="100" placeholder="담당자명을 입력하세요.">
                     </td>
                 </tr>
-                <br>
                 <tr>
-                    <th>휴대폰 
-                        <span>*</span>
+                    <th><span id="item itemc">휴대폰</span> 
+                        <span id="star">*</span>
                     </th>
-                    <td>
-                        <input class="box" type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요.">
+                    <td class="cellphone">
+                        <input class="box " type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요." >
+                    </td>
+                <!-- </tr>
+                <tr> -->
+                    <th><span id="item">이메일</span>
+                        <span id="star">*</span>
+                    </th>
+                    <td class="email">
+                        <input type="text" placeholder="이메일을 입력하세요.">
                     </td>
                 </tr>
-                <br>
-                <tr>
-                    <th>이메일
-                        <span>*</span>
-                    </th>
-                    <td>
-                        <input class="box" type="text" placeholder="이메일을 입력하세요.">
-                    </td>
-                </tr>
-                <br>
-                <tr>
-                    <th>내용 
-                        <span>*</span>
-                    </th>
-                    <td>
-                        <input class="box" id="inquiry" type="text" placeholder="문의내용을 입력하세요.">
 
+                <tr class="inqury1">
+                    <th><span id="item">내용</span> 
+                        <span id="star">*</span>
+                    </th>
+                    <td>
+                        <!-- <div class="inquiry"> -->
+                        <input type="text" placeholder="문의내용을 입력하세요." style="height: 400px;">
+                       
+                        <!-- </div>     -->
                     </td>
                 </tr>
             </tbody>
-        </table>    
+        </table>  
+        </div>  
     </div>
+    
+    <footer>
+        <div class="footer_logo">
+            <img src="./서울구석구석로고.png" alt="">
+        </div>
+        <div>
+            <ul class="footer_email_box">
+                <li class="footer_email">gkjm123@naver.com</li>
+                <li class="footer_email">kon0147@gmail.com</li>
+                <li class="footer_email">rlaekqls0504@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
     
 </body>
 </html>
