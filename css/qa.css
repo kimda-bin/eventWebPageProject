@@ -9,30 +9,31 @@
 
         }
         .qa-container {
-            
-          
-            border-radius: 10px;
             width: 100%;
             min-height: 770px;
-            margin-top: -50px;   
+            /* margin-top: -50px;    */
                 
         }
 
         .qa-container > .container2 {
-            width: 85%; margin: auto;
+            /* width: 85%;  */
+            /* width: fit-content; */
+            margin: auto;
             background-color: rgb(55, 55, 55);
             border-radius: 10px;
             position: relative;
-            top: 40px;
+            top: 75px;
         
 
         }
 
         h2 {
-            padding: 40px;
-            margin-bottom: -30px;
-            color: rgb(55, 55, 55);
+            color: white;
             font-size: 44px;
+            position: relative;
+            top: 28px;
+            left: 16px;
+            
         }
     
         table { 
@@ -40,27 +41,49 @@
             border-collapse: collapse; 
             /* collapse를 사용하여 테이블의 border 볗합 */
             width: 100%;
-            /* margin-bottom: 30px; */
+            /* position: static; */
+            /* position: relative;
+            top: 10px;
+            left: -30px;
+             */
+             table-layout: fixed; 
+             /* 페이지 줄일때 td 접히면서 먹히는 현상 해결 */
             
         }
         
 
         
         th, td {
-            padding: 16px;
-            
+            padding: 10px;
             text-align: center;
             vertical-align: top;
             border-bottom: 1px solid #ddd;
             color: white;
+            /* position:relative; */
+            /* left: -10px; */
+            /* position: sticky; */
+            /* table-layout: fixed; */
             
+
         }
+    
     
         th {
-            width: 100px;
+            width: 250px;
             font-size: 15px;
+            padding-right: 0px;
+            margin-left: 0px;
+            /* position: relative; */
+            /* left: -300px; */
+            text-align: center;
+            
         }
-    
+        td{
+            width: 20px;
+            /* left: -500px; */
+          
+        }
+     
     
         #star {
             color: red;
@@ -68,20 +91,40 @@
         }
     
         input[type="text"]{
-            
-            width: 500px;
+            width: 350px;
             height: 1px;
-            padding:18px;
-            margin-left: -58px;
-            border-radius: 4px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 15px;
+            padding-bottom: 15px;;
+            /* margin-left: -58px; */
+            border-radius: 3px;
             border: 1px solid #ddd;
+            position: relative;
+            left: -100px;
         }
+        
        
+            /* @media screen and (min-width: 1024px) {
+                        input[type="text"]{
+                        width: 180px;
+                        }    
+                        .qa-container > .container2 {
+                            width: 103%;
+                            
+                        }
+                    } */
+            
+        
         @media screen and (min-width: 300px) and (max-width: 767px){
             .qa-container{
                 background-color: rgb(55, 55, 55);
                 /* display: block;
                 margin: 0 auto; */
+                border-radius: 0px;
+            }
+            .qa-container > .container2{
+                top: -10px;
             }
             
             th{
@@ -117,11 +160,14 @@
                 position:relative;
                 left:-200px;
             }
-            @media screen and (min-width: 768px) and (max-width: 1024px){
-                input[type="text"]{
-                 width: 180px;
-                    
-                }
-        } 
-        
-    
+            h2{
+                color: white;
+                font-size: 36px;
+                position: relative;
+                top: 60px;
+                left: -11px;
+                margin-top: 50px;
+                margin-bottom: 65px;
+            }
+        }
+            
