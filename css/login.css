@@ -1,6 +1,9 @@
 body,
 html {
     height: 100%;
+}
+
+body {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -16,6 +19,14 @@ html {
     border-radius: 3%;
     display: flex;
     justify-content: center;
+}
+
+.contentBody {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .cross {
@@ -62,7 +73,6 @@ html {
 
 h2 {
     color: white;
-
 }
 
 
@@ -81,32 +91,6 @@ h2 {
     margin-left: 3%;
 }
 
-@media screen and (min-width: 300px) and (max-width: 767px) {
-    body {
-        /* width: 100%; */
-        /* height: 100%; */
-        background-color: rgb(55, 55, 55);
-        position: relative;
-        left: 200px;
-        top: -250px;
-    }
-
-    form {
-        /* width: 200px; */
-        /* height: 250px; */
-        border: 0.5px solid rgb(95, 95, 95);
-        margin: 15% auto;
-
-    }
-
-    h2 {
-        position: relative;
-        left: -20px;
-    }
-
-
-}
-
 #text {
     display: flex;
     font-size: 5px;
@@ -120,6 +104,4 @@ h2 {
     font-size: 7px;
 }
 
-/* @media screen and (min-width: 1024px){
-
-        } */
+@media screen and (min-width: 300px) and (max-width: 767px) {}
