@@ -1,52 +1,58 @@
-
 .join-wrap {
     background-image: url('../img/background.png');
-    position: relative; background-repeat: no-repeat;
+    position: relative;
+    background-repeat: no-repeat;
     background-position: center;
-    width: 100%; min-height: 900px;
+    width: 100%;
+    min-height: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .join-container {
-    width: 380px; height: 500px;
+    width: 380px;
+    height: 500px;
     background-color: rgb(55, 55, 55);
     border-radius: 3%;
     position: relative;
-    
+
 }
 
-.join-wrap  > .join-container > .join-contents {
-    
-    width: 80%; margin: auto;
+.join-wrap>.join-container>.join-contents {
+
+    width: 80%;
+    margin: auto;
 }
 
-.join-wrap  > .join-container >  .join-contents > h2 {
+.join-wrap>.join-container>.join-contents>h2 {
     color: white;
     margin-right: 5.5%;
 }
 
-.join-wrap  > .join-container > .join-contents > .cross {
+.join-wrap>.join-container>.join-contents>.cross {
     width: 18px;
-    height: 18px; text-align: right;
-    position: absolute; right: 12px; top: -30px;
+    height: 18px;
+    text-align: right;
+    position: absolute;
+    right: 12px;
+    top: -30px;
 
 }
 
-.join-wrap  > .join-container > .join-contents > .cross > img:hover {
-    animation: rotate 0.5s 
+.join-wrap>.join-container>.join-contents>.cross>img:hover {
+    animation: rotate 0.5s
 }
 
 
 
-.join-wrap  > .join-container > .join-contents > .cross > img {
+.join-wrap>.join-container>.join-contents>.cross>img {
     width: 18px;
     height: 18px;
 }
 
 
-.join-wrap  > .join-container > .join-contents > .item > input  {
+.join-wrap>.join-container>.join-contents>.item>input {
     width: 100%;
     height: 38px;
     border: 0.1px solid rgb(239, 239, 239);
@@ -58,37 +64,39 @@
 
 
 .join-button {
-    width: 100%; height: 38px; line-height: 38px;
-    font-size: 1em; font-weight: bold;
-    color: white; background-color: rgb(255, 91, 91);
-    border-radius: 5px; 
-    text-align: center; cursor: pointer;
-}
-
-.join-button:hover {
-    background-color: rgb(255, 21, 21);
-
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(91, 157, 255);
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
 }
 
 
 @keyframes rotate {
     from {
-      -webkit-transform: rotate(0deg);
-      -o-transform: rotate(0deg);
-      transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-      -webkit-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
+}
+
 
 @media screen and (max-width:756px) {
-    
+
     .join-wrap {
-        width: 100%; min-height: 100vh;
+        width: 100%;
+        min-height: 100vh;
     }
 
 }
