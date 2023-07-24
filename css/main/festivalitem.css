@@ -76,7 +76,9 @@
 
 
 
-@media screen and (min-width:480px) and (max-width:600px) {
-    
+@media screen and (max-width:600px) {
 
+   .festival > .festival-wrap {
+        width: 88%; margin: auto;
+    }
 }

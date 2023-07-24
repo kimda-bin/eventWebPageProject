@@ -38,11 +38,12 @@ const eventDetailDatavind = (index, datalist) => {
  // 디테일 행사정보
 const createEventDetailInfo = (DATA) => {
 
-    let typeTitle = ["장소", "기간", "시간", '대상', '요금', "문의"];
-    let week = ["일요일","월요일","화요일","수요일","목요일","금요일"]
+    let typeTitle = ["장소", "기간", "요일", '대상', '요금', "문의"];
+    let week = ["일요일","월요일","화요일","수요일","목요일","금요일", "토요일"]
     let typeContent = [];
     
     let day = new Date(DATA.STRTDATE).getDay();
+    console.log('day',day)
     let hour = new Date(DATA.STRTDATE).getHours();
     let miut = new Date(DATA.STRTDATE).getHours();
 
@@ -51,9 +52,9 @@ const createEventDetailInfo = (DATA) => {
 
     typeContent.push(DATA.PLACE); // 장소
     typeContent.push(DATA.DATE); // 기간
-    typeContent.push(`${week[day]} ${hour}시 ${miut}분`); // 시간
+    typeContent.push(`${week[day]}`); // 시간
     typeContent.push(DATA.USE_TRGT); // 대상
-    typeContent.push(DATA.USE_FEE); // 요금
+    typeContent.push(DATA.USE_FEE === "" ? "무료" : DATA.USE_FEE); // 요금
     typeContent.push(DATA.ORG_NAME); // 문의
 
     const typeLiCreate = () => {
@@ -97,7 +98,7 @@ const createEventDetailInfo = (DATA) => {
  // 디테일 행사 세부정보
 const createEventDetailSubinfo = (DATA) => {
 
-    
+    console.log(DATA);
     const startEndDate = (STRTDATE, END_DATE) => {
 
         return `${STRTDATE.slice(0, 10)} ~ ${END_DATE.slice(0, 10)}`
@@ -115,7 +116,7 @@ const createEventDetailSubinfo = (DATA) => {
 
             <div class="txt-box">
                 <h6>출연자 정보</h6>
-                <p>${DATA.PLAYER}<p>
+                <p>${DATA.PLAYER === "" ? "출연자 없음" : DATA.PLAYER}<p>
             </div>
 
             <div class="txt-box">
@@ -124,7 +125,8 @@ const createEventDetailSubinfo = (DATA) => {
             </div>
             <div class="txt-box">
                 <h6>프로그램 소개</h6>
-                <p>${DATA.PROGRAM} <br/> ${DATA.ETC_DESC}<p>
+                <p>${DATA.PROGRAM === "" ? "프로그램 소개 없음" : DATA.PROGRAM} <br/> 
+                    ${DATA.ETC_DESC === "" ? "기타 소개 없음": DATA.ETC_DESC}<p>
             </div>
           
         </div>

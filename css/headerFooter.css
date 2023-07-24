@@ -22,7 +22,7 @@ a {
     justify-content: space-between;
     align-items: center;
     background-color: var(--background-color);
-    padding: 8px 12px;
+    padding: 8px 24px;
 }
 
 .navbar__logo {
@@ -32,7 +32,7 @@ a {
 }
 
 .navbar__logo>a>img {
-    width: 90px;
+    width: 85px;
 }
 
 .navbar__logo i {
