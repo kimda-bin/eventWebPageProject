@@ -1,173 +1,214 @@
 
         body {
             background-color: white;
-            /* scale: 80%; */
-            /* overflow-x: hidden;  */
-            /* y축 스크롤바 업애기 */
-            /* margin-top: -15px; */
-            /* margin-left: 100px; */
-
         }
         .qa-container {
             width: 100%;
             min-height: 770px;
-            /* margin-top: -50px;    */
-                
+            box-sizing: border-box;
         }
-
-        .qa-container > .container2 {
-            /* width: 85%;  */
-            /* width: fit-content; */
-            margin: auto;
-            background-color: rgb(55, 55, 55);
-            border-radius: 10px;
-            position: relative;
-            top: 75px;
-        
-
-        }
-
         h2 {
             color: white;
             font-size: 44px;
-            position: relative;
+            /* position: relative;
             top: 28px;
-            left: 16px;
+            left: 16px; */
             
         }
-    
         table { 
-            
+            width: 100%;
             border-collapse: collapse; 
             /* collapse를 사용하여 테이블의 border 볗합 */
             width: 100%;
-            /* position: static; */
-            /* position: relative;
-            top: 10px;
-            left: -30px;
-             */
-             table-layout: fixed; 
-             /* 페이지 줄일때 td 접히면서 먹히는 현상 해결 */
+            table-layout: fixed; 
+            /* 페이지 줄일때 td 접히면서 먹히는 현상 해결 */
             
         }
-        
-
-        
         th, td {
             padding: 10px;
             text-align: center;
             vertical-align: top;
             border-bottom: 1px solid #ddd;
             color: white;
-            /* position:relative; */
-            /* left: -10px; */
-            /* position: sticky; */
-            /* table-layout: fixed; */
-            
+        }
 
-        }
-    
-    
-        th {
-            width: 250px;
-            font-size: 15px;
-            padding-right: 0px;
-            margin-left: 0px;
-            /* position: relative; */
-            /* left: -300px; */
-            text-align: center;
-            
-        }
-        td{
-            width: 20px;
-            /* left: -500px; */
-          
-        }
-     
-    
         #star {
             color: red;
-            font-size: 12px;
         }
     
         input[type="text"]{
-            width: 350px;
-            height: 1px;
-            padding-left: 0px;
-            padding-right: 0px;
-            padding-top: 15px;
-            padding-bottom: 15px;;
-            /* margin-left: -58px; */
+            border: 2px solid gainsboro;
             border-radius: 3px;
-            border: 1px solid #ddd;
-            position: relative;
-            left: -100px;
+            /* padding-top: 5px;
+            padding-bottom: 10px; */
+            line-height: 2;
         }
-        
-       
-            /* @media screen and (min-width: 1024px) {
-                        input[type="text"]{
-                        width: 180px;
-                        }    
-                        .qa-container > .container2 {
-                            width: 103%;
-                            
-                        }
-                    } */
+        textarea{
+            overflow: auto;
+            border: 2px solid #ddd;
+            border-radius: 3px;
+            width: 100%;
+            min-height: 100px;
+            line-height: 1.2;
             
-        
+            /* outline: none !important; */
+
+        }
+        button:hover[type="submit"]{
+            background-color: #aaaaaa;
+        }
         @media screen and (min-width: 300px) and (max-width: 767px){
             .qa-container{
                 background-color: rgb(55, 55, 55);
-                /* display: block;
-                margin: 0 auto; */
-                border-radius: 0px;
+                margin-top: 89px;
+                /* margin-bottom: 0px; */
             }
-            .qa-container > .container2{
-                top: -10px;
-            }
-            
-            th{
-                font-size: smaller;
-            }
-            th tr{
-                display: block;
-            }
-            input[type="text"]{
-                font-size: small;
-                
-            }
-            
-            /* .qa-table{
-                margin: 0 -10px;
-            } */
-            .qa-table th,  .qa-table td {
-                width: 100%;
-                display: block;
-                /* border-top: none; */
-            }
-              /* .qa-table tr:first-child th {
-                border-top: 1px solid #ddd;
-              } */
-            
-            input[type="text"]{
-                width: 450px;
-                position: relative;
-                left: 25px;
-                
-            }
-            span{
-                position:relative;
-                left:-200px;
-            }
+        
             h2{
                 color: white;
                 font-size: 36px;
                 position: relative;
+                top: 25px;
+                left: 10px;
+            }
+            th{
+                font-size: 16px;
+            }
+            th, td {
+                width: 100%;
+                display: block;
+            }
+            input[type="text"]{
+                width: 100%;
+                font-size: 12px;
+            }
+            #item, #star{
+                position: relative;
+                left: -196px;
+                
+            }
+            button[type="submit"]{
+                width: 50%; height: 50px;
+                border-radius: 10px;
+                display: inline-block;
+                position: relative;
+                left: 150px; bottom: -50px;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px){
+            .qa-container{
+                background-color: rgb(55, 55, 55);
+                margin-top: 89px;
+                /* margin-bottom: 0px; */
+            }
+        
+            h2{
+                color: white;
+                font-size: 36px;
+                position: relative;
+                top: 25px;
+                left: 70px;
+            }
+            th{
+                font-size: 16px;
+                
+            }
+            th, td {
+                width: 100%;
+                display: block;
+            }
+    
+            input[type="text"]{
+                width: 85%;
+                font-size: 12px;
+            }
+            #item, #star{
+                position: relative;
+                left: -280px;
+                
+            }
+            button[type="submit"]{
+                width: 25%; height: 50px;
+                border-radius: 10px;
+                display: inline-block;
+                position: relative;
+                left: 350px; bottom: -50px;
+            }
+            textarea{
+                width: 85%;
+            }
+        }
+        @media screen and (min-width: 1024px){
+            .qa-container{
+                
+                background-color: white;
+                width: 100%;
+                margin-top: 100px;
+                padding-left: 20px;
+                position: relative;
+                left: 315px;
+            }
+            table{
+                
+                background-color: rgb(55, 55, 55);
+                border-radius: 7px;
+                position: relative;
+                left: 0px;
+                width: 900px;
+                
+            }
+        
+            h2{width: 900px;
+                color: white;
+                background-color: rgb(55, 55, 55);
+                border-radius: 7px;
+                /* border-bottom: 2px solid #ddd; */
+                font-size: 36px;
+                padding-top: 25px;
+                padding-left: 75px;
+                padding-bottom: 35px;
+                position: relative;
                 top: 60px;
-                left: -11px;
-                margin-top: 50px;
-                margin-bottom: 65px;
+                left: 0px;
+            }
+           
+            th{
+                font-size: 16px;
+                padding-bottom: 20px;
+                padding-top: 20px;
+                /* position: relative;
+                left: 350px; */
+            }
+
+            th, td {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                /* display: block; */
+            }
+            input[type="text"]{
+                width: 85%;
+                padding-bottom: 0px;
+                font-size: 16px;
+                position: relative;
+            }
+            #item, #star{
+                position: relative;
+                left: -340px;
+                
+            }
+            button[type="submit"]{
+                width: 15%; height: 50px;
+                border-radius: 3px;
+                display: inline-block;
+                position: relative;
+                left: 365px; bottom: -25px;
+            }
+            textarea{
+                width: 85%;
+            }
+            footer{
+                margin-top: 65px;
             }
         }
             
