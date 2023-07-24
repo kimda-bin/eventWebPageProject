@@ -103,15 +103,18 @@ h1 {
 
 #text {
     display: flex;
-    font-size: 12px;
+    width: 100%;
+    font-size: 18px;
     color: rgb(180, 180, 180);
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 #text>a {
     color: rgb(226, 225, 225);
-    font-size: 12px;
+    font-size: 18px;
 }
 
 @media screen and (min-width: 300px) and (max-width: 767px) {}
