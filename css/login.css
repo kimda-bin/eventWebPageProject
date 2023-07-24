@@ -41,6 +41,10 @@ body {
     height: 15px;
 }
 
+.cross:hover {
+    animation: rotate 0.5s
+}
+
 .closeBox {
     display: flex;
 }
@@ -115,6 +119,20 @@ h1 {
 #text>a {
     color: rgb(226, 225, 225);
     font-size: 18px;
+}
+
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
 @media screen and (max-width: 480px) {
