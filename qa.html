@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./css/headerFooter.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 
 <body>
@@ -28,9 +27,9 @@
 
         <a href="#" class="navbar__toggleBtn"><i class="fas fa-bars"></i> </a>
     </nav>
-    <div class="qa-container">
-        <h2>문의하기</h2>
-        <div class="container2">
+   
+        <div class="qa-container">
+            <h2>문의하기</h2>
             <table class="qa-table">
                 <tbody>
                     <tr>
@@ -38,47 +37,51 @@
                             <span id="star">*</span>
                         </th>
                         <td>
-                            <input type="text" maxlength="100" placeholder="업체명을 입력하세요.">
+                            <input type="text" maxlength="100" 
+                            placeholder="업체명을 입력하세요.">
                         </td>
+                    </tr>  
+                    <tr>  
                         <th><span id="item">담당자명</span>
                             <span id="star">*</span>
                         </th>
                         <td>
-                            <input type="text" maxlength="100" placeholder="담당자명을 입력하세요.">
+                            <input type="text" maxlength="100" 
+                            placeholder="담당자명을 입력하세요.">
                         </td>
                     </tr>
                     <tr>
-                        <th><span id="item itemc">휴대폰</span>
+                        <th><span id="item">휴대폰</span>
                             <span id="star">*</span>
                         </th>
                         <td class="cellphone">
-                            <input class="box " type="text" maxlength="20" placeholder="휴대폰번호를 입력하세요.">
+                            <input class="box " type="text" maxlength="20"
+                             placeholder="휴대폰번호를 입력하세요.">
                         </td>
-                        <!-- </tr>
-                <tr> -->
+                    </tr>
+                    <tr>
                         <th><span id="item">이메일</span>
                             <span id="star">*</span>
                         </th>
                         <td class="email">
-                            <input type="text" placeholder="이메일을 입력하세요.">
+                            <input type="text" 
+                            placeholder="이메일을 입력하세요.">
                         </td>
                     </tr>
-
-                    <tr class="inqury1">
+                    <tr class="inqury">
                         <th><span id="item">내용</span>
                             <span id="star">*</span>
                         </th>
                         <td>
-                            <!-- <div class="inquiry"> -->
-                            <input type="text" placeholder="문의내용을 입력하세요." style="height: 400px;">
-
-                            <!-- </div>     -->
+                            <textarea type="textarea" 
+                            placeholder="문의내용을 입력하세요."></textarea>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <div id="btn"><button type="submit">문의하기</button></div>
         </div>
-    </div>
+   
 
     <footer>
         <div class="footer_logo">
