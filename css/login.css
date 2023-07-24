@@ -117,4 +117,9 @@ h1 {
     font-size: 18px;
 }
 
-@media screen and (min-width: 300px) and (max-width: 767px) {}
+@media screen and (max-width: 480px) {
+    .container {
+        width: 330px;
+        height: 450px;
+    }
+}
