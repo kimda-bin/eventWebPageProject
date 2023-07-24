@@ -1,214 +1,239 @@
+.qa-container {
+    width: 100%;
+    margin-top: 90px;
+    min-height: 770px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        body {
-            background-color: white;
-        }
-        .qa-container {
-            width: 100%;
-            min-height: 770px;
-            box-sizing: border-box;
-        }
-        h2 {
-            color: white;
-            font-size: 44px;
-            /* position: relative;
-            top: 28px;
-            left: 16px; */
-            
-        }
-        table { 
-            width: 100%;
-            border-collapse: collapse; 
-            /* collapse를 사용하여 테이블의 border 볗합 */
-            width: 100%;
-            table-layout: fixed; 
-            /* 페이지 줄일때 td 접히면서 먹히는 현상 해결 */
-            
-        }
-        th, td {
-            padding: 10px;
-            text-align: center;
-            vertical-align: top;
-            border-bottom: 1px solid #ddd;
-            color: white;
-        }
 
-        #star {
-            color: red;
-        }
-    
-        input[type="text"]{
-            border: 2px solid gainsboro;
-            border-radius: 3px;
-            /* padding-top: 5px;
-            padding-bottom: 10px; */
-            line-height: 2;
-        }
-        textarea{
-            overflow: auto;
-            border: 2px solid #ddd;
-            border-radius: 3px;
-            width: 100%;
-            min-height: 100px;
-            line-height: 1.2;
-            
-            /* outline: none !important; */
+}
 
-        }
-        button:hover[type="submit"]{
-            background-color: #aaaaaa;
-        }
-        @media screen and (min-width: 300px) and (max-width: 767px){
-            .qa-container{
-                background-color: rgb(55, 55, 55);
-                margin-top: 89px;
-                /* margin-bottom: 0px; */
-            }
-        
-            h2{
-                color: white;
-                font-size: 36px;
-                position: relative;
-                top: 25px;
-                left: 10px;
-            }
-            th{
-                font-size: 16px;
-            }
-            th, td {
-                width: 100%;
-                display: block;
-            }
-            input[type="text"]{
-                width: 100%;
-                font-size: 12px;
-            }
-            #item, #star{
-                position: relative;
-                left: -196px;
-                
-            }
-            button[type="submit"]{
-                width: 50%; height: 50px;
-                border-radius: 10px;
-                display: inline-block;
-                position: relative;
-                left: 150px; bottom: -50px;
-            }
-        }
-        @media screen and (min-width: 768px) and (max-width: 1023px){
-            .qa-container{
-                background-color: rgb(55, 55, 55);
-                margin-top: 89px;
-                /* margin-bottom: 0px; */
-            }
-        
-            h2{
-                color: white;
-                font-size: 36px;
-                position: relative;
-                top: 25px;
-                left: 70px;
-            }
-            th{
-                font-size: 16px;
-                
-            }
-            th, td {
-                width: 100%;
-                display: block;
-            }
-    
-            input[type="text"]{
-                width: 85%;
-                font-size: 12px;
-            }
-            #item, #star{
-                position: relative;
-                left: -280px;
-                
-            }
-            button[type="submit"]{
-                width: 25%; height: 50px;
-                border-radius: 10px;
-                display: inline-block;
-                position: relative;
-                left: 350px; bottom: -50px;
-            }
-            textarea{
-                width: 85%;
-            }
-        }
-        @media screen and (min-width: 1024px){
-            .qa-container{
-                
-                background-color: white;
-                width: 100%;
-                margin-top: 100px;
-                padding-left: 20px;
-                position: relative;
-                left: 315px;
-            }
-            table{
-                
-                background-color: rgb(55, 55, 55);
-                border-radius: 7px;
-                position: relative;
-                left: 0px;
-                width: 900px;
-                
-            }
-        
-            h2{width: 900px;
-                color: white;
-                background-color: rgb(55, 55, 55);
-                border-radius: 7px;
-                /* border-bottom: 2px solid #ddd; */
-                font-size: 36px;
-                padding-top: 25px;
-                padding-left: 75px;
-                padding-bottom: 35px;
-                position: relative;
-                top: 60px;
-                left: 0px;
-            }
-           
-            th{
-                font-size: 16px;
-                padding-bottom: 20px;
-                padding-top: 20px;
-                /* position: relative;
-                left: 350px; */
-            }
+.qa-container>.qa-container2 {
+    width: 600px;
+    background-color: rgb(55, 55, 55);
+    border-radius: 7px;
+    box-sizing: content-box;
+    padding: 0.5em;
+    margin: 2em 0;
 
-            th, td {
-                display: block;
-                width: 100%;
-                padding: 15px;
-                /* display: block; */
-            }
-            input[type="text"]{
-                width: 85%;
-                padding-bottom: 0px;
-                font-size: 16px;
-                position: relative;
-            }
-            #item, #star{
-                position: relative;
-                left: -340px;
-                
-            }
-            button[type="submit"]{
-                width: 15%; height: 50px;
-                border-radius: 3px;
-                display: inline-block;
-                position: relative;
-                left: 365px; bottom: -25px;
-            }
-            textarea{
-                width: 85%;
-            }
-            footer{
-                margin-top: 65px;
-            }
-        }
-            
+}
+
+.qa-container>.qa-container2>h2 {
+    color: white;
+    font-size: 28px;
+    margin: 0.8em 0;
+}
+
+.qa-container>.qa-container2>.qa-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* collapse를 사용하여 테이블의 border 볗합 */
+    width: 100%;
+    table-layout: fixed;
+    /* 페이지 줄일때 td 접히면서 먹히는 현상 해결 */
+
+}
+
+
+th,
+td {
+    padding: 10px;
+    text-align: center;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+    color: white;
+}
+
+.inquiry *:nth-child(2) {
+    border-bottom: 0;
+}
+
+#star {
+    color: red;
+}
+
+input[type="text"] {
+    border: 2px solid gainsboro;
+    border-radius: 3px;
+    /* padding-top: 5px;
+    padding-bottom: 10px; */
+    line-height: 2;
+}
+
+textarea {
+    overflow: auto;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    width: 100%;
+    min-height: 100px;
+    line-height: 1.2;
+}
+
+#btn {
+    text-align: center;
+}
+
+button:hover[type="submit"] {
+    background-color: #aaaaaa;
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+    .qa-container {
+        background-color: rgb(55, 55, 55);
+        margin-top: 89px;
+        /* margin-bottom: 0px; */
+    }
+
+    .qa-container>.qa-container2 {
+        margin-top: -6em;
+    }
+
+    .qa-container>.qa-container2>.qa-table {
+        width: 97%;
+        ;
+    }
+
+    h2 {
+        color: white;
+        font-size: 36px;
+
+    }
+
+    th {
+        font-size: 16px;
+    }
+
+    th,
+    td {
+        width: 100%;
+        display: block;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    #item,
+    #star {}
+
+    button[type="submit"] {
+        width: 50%;
+        height: 50px;
+        border-radius: 10px;
+        display: inline-block;
+        margin: 10px;
+
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .qa-container {
+        background-color: rgb(55, 55, 55);
+        margin-top: 89px;
+        /* margin-bottom: 0px; */
+    }
+
+    h2 {
+        color: white;
+        font-size: 36px;
+
+    }
+
+    th {
+        font-size: 16px;
+
+    }
+
+    th,
+    td {
+        width: 100%;
+        display: block;
+    }
+
+    input[type="text"] {
+        width: 85%;
+        font-size: 12px;
+    }
+
+    #item,
+    #star {}
+
+    button[type="submit"] {
+        width: 25%;
+        height: 50px;
+        border-radius: 10px;
+        display: inline-block;
+
+    }
+
+    textarea {
+        width: 85%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .qa-container {
+
+        background-color: white;
+        width: 100%;
+
+    }
+
+    table {}
+
+    h2 {
+        color: white;
+        /* border-bottom: 2px solid #ddd; */
+        font-size: 36px;
+
+    }
+
+    th {
+        font-size: 16px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        /* position: relative;
+        left: 350px; */
+    }
+
+    th,
+    td {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        /* display: block; */
+    }
+
+    input[type="text"] {
+        width: 85%;
+        padding-bottom: 0px;
+        font-size: 16px;
+
+    }
+
+    #item,
+    #star {}
+
+    button[type="submit"] {
+        width: 15%;
+        height: 50px;
+        border-radius: 3px;
+        display: inline-block;
+
+    }
+
+    textarea {
+        width: 85%;
+    }
+
+    footer {
+        margin-top: 65px;
+    }
+}
+
+
+>>>>>>>kim5
