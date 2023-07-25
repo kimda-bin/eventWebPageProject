@@ -83,6 +83,14 @@ body {
     border: 3px solid red !important;
 }
 
+
+.login-email-invaild {
+    
+    color: rgb(255, 91, 91);
+    font-size: 0.9em;
+    display: none;
+}
+
 /* #lg:hover {
     background-color: rgb(255, 21, 21);
 } */
