@@ -1,29 +1,30 @@
 
 
 
-$(window).ready(function(){ 
-    
-    $("#loginId").on("input",function(e){
-        
-       
+$(window).ready(function () {
+
+    $("#loginId").on("input", function (e) {
+
+        console.log(document.getElementById('emailInvaild'))
         let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (emailPattern.test(e.currentTarget.value)) {
-    
+
             document.getElementById('emailInvaild').style.display = 'none';
 
         } else {
+            document.getElementById('emailInvaild')
             document.getElementById('emailInvaild').style.display = 'block';
         }
-        
-        if (e.currentTarget.value === "" ) {
-            
+
+        if (e.currentTarget.value === "") {
+
             document.getElementById('emailInvaild').style.display = 'none';
         }
 
 
     })
-  
-}); 
+
+});
 
 
 
