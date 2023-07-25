@@ -72,7 +72,7 @@ const festivalItem = (datalist) => {
                     infinite: true,
                 }
             },
-            {
+            { 
                 breakpoint: 786,
                 settings: {
                     slidesToShow: 2,
