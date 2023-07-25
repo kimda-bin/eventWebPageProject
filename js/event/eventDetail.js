@@ -43,7 +43,6 @@ const createEventDetailInfo = (DATA) => {
     let typeContent = [];
     
     let day = new Date(DATA.STRTDATE).getDay();
-    console.log('day',day)
     let hour = new Date(DATA.STRTDATE).getHours();
     let miut = new Date(DATA.STRTDATE).getHours();
 
@@ -98,7 +97,6 @@ const createEventDetailInfo = (DATA) => {
  // 디테일 행사 세부정보
 const createEventDetailSubinfo = (DATA) => {
 
-    console.log(DATA);
     const startEndDate = (STRTDATE, END_DATE) => {
 
         return `${STRTDATE.slice(0, 10)} ~ ${END_DATE.slice(0, 10)}`

@@ -19,18 +19,18 @@
 
 }
 
-.join-wrap>.join-container>.join-contents {
+.join-wrap > .join-container > .join-contents {
 
     width: 80%;
     margin: auto;
 }
 
-.join-wrap>.join-container>.join-contents>h2 {
+.join-wrap > .join-container > .join-contents > h2 {
     color: white;
     margin-right: 5.5%;
 }
 
-.join-wrap>.join-container>.join-contents>.cross {
+.join-wrap > .join-container > .join-contents > .cross {
     width: 18px;
     height: 18px;
     text-align: right;
@@ -40,19 +40,17 @@
 
 }
 
-.join-wrap>.join-container>.join-contents>.cross>img:hover {
-    animation: rotate 0.5s
-}
-
-
-
-.join-wrap>.join-container>.join-contents>.cross>img {
+.join-wrap>.join-container > .join-contents>.cross > img {
     width: 18px;
     height: 18px;
 }
 
+.join-wrap>.join-container > .join-contents > .cross > img:hover {
+    animation: rotate 0.5s
+}
 
-.join-wrap>.join-container>.join-contents>.item>input {
+
+.join-wrap>.join-container > .join-contents > .item > input {
     width: 100%;
     height: 38px;
     border: 0.1px solid rgb(239, 239, 239);
@@ -62,6 +60,10 @@
     margin-bottom: 1.2em;
 }
 
+.error-input {
+
+    border: 3px solid red !important;
+}
 
 .join-button {
     width: 100%;
