@@ -1,3 +1,32 @@
+
+
+
+$(window).ready(function(){ 
+    
+    $("#loginId").on("input",function(e){
+        
+       
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (emailPattern.test(e.currentTarget.value)) {
+    
+            document.getElementById('emailInvaild').style.display = 'none';
+
+        } else {
+            document.getElementById('emailInvaild').style.display = 'block';
+        }
+        
+        if (e.currentTarget.value === "" ) {
+            
+            document.getElementById('emailInvaild').style.display = 'none';
+        }
+
+
+    })
+  
+}); 
+
+
+
 const loginOnchange = (e) => {
     e.classList.remove('error-input');
 }
