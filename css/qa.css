@@ -13,7 +13,7 @@
     background-color: rgb(55, 55, 55);
     border-radius: 7px;
     box-sizing: content-box;
-    padding: 2.5em;
+    padding: 0.5em;
     margin: 2em 0;
 
 }
@@ -52,7 +52,8 @@
     color: white;
     font-size: 28px;
     margin: 0.8em 0;
-    margin-left: 0.4em;
+    margin-left: 2em;
+
 }
 
 .qa-container > .qa-container2 > .qa-table {
@@ -62,6 +63,7 @@
     width: 100%;
     table-layout: fixed;
     /* 페이지 줄일때 td 접히면서 먹히는 현상 해결 */
+    margin-left: 48px;
 
 }
 
@@ -117,7 +119,7 @@ button:hover[type="submit"] {
 @media screen and (min-width: 300px) and (max-width: 767px) {
     .qa-container {
         background-color: rgb(55, 55, 55);
-        margin-top: 10px; 
+        margin-top: 0px; 
         /* margin-bottom: 0px; */
     }
 
@@ -128,12 +130,20 @@ button:hover[type="submit"] {
 
     .qa-container>.qa-container2>.qa-table {
         width: 97%;
+        margin-left: -6px;
         ;
     }
+    
+    .qa-container > .qa-container2 > h2 {
+        
+        margin-left: 0em;
 
+    }
     h2 {
         color: white;
         font-size: 36px;
+        
+      
 
     }
 
