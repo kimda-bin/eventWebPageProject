@@ -6,13 +6,13 @@ const loginOnclick = () => {
 
     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    let loginId =  document.getElementById('loginId');
+    let loginId = document.getElementById('loginId');
 
     if (loginId.value === '' || emailPattern.test(loginId.value) === false) {
 
         loginId.className += ' error-input';
         return alert('email를 확인해주세요.')
-    }   
+    }
 
     let loginPw = document.getElementById('loginPw');
 
@@ -37,12 +37,12 @@ const joinOnclick = () => {
 
     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let bornPattern = /([0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1,2][0-9]|3[0,1]))/;
-    let phonePattern =  /01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/;
+    let phonePattern = /01[016789][^0][0-9]{2,3}[0-9]{3,4}/;
 
 
     let email = document.getElementById('joinEmail');
 
-    if (email.value === "" || emailPattern.test(email.value) === false ) {
+    if (email.value === "" || emailPattern.test(email.value) === false) {
         email.className += 'error-input';
         return alert('email을 확인해주세요');
     }
@@ -59,19 +59,19 @@ const joinOnclick = () => {
     }
 
     let name = document.getElementById('joinName');
-    if (name.value === "" ) {
+    if (name.value === "") {
         name.className += 'error-input';
         return alert('이름을 확인해주세요');
     }
     let born = document.getElementById('joinBorn');
-    if (born.value === ""|| bornPattern.test(born.value) === false ) {
+    if (born.value === "" || bornPattern.test(born.value) === false) {
 
         born.className += ' error-input';
         return alert('생년월일을 확인해주세요');
     }
 
     let phone = document.getElementById('joiPhone');
-    if (phone.value === "" || phonePattern.test(phone.value) === false ) {
+    if (phone.value === "" || phonePattern.test(phone.value) === false) {
         phone.className += 'error-input';
         return alert('핸드폰 번호를 확인해주세요');
     }
