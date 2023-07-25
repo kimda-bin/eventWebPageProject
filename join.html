@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/join.css">
 </head>
 
+
 <body>
 
     <div class="join-wrap">
@@ -19,27 +20,30 @@
                 <h2>회원가입</h2>
                 <a href="./index.html" class="cross" ><img src="./img/close.png" ></a>
                 <div class="item">
-                    <input type="email" placeholder="email">
+                    <input id="joinEmail" type="email" onchange="joinOnchange(this)" placeholder="email">
                 </div>
                 <div class="item">
-                    <input type="password" placeholder="비밀번호">
+                    <input id="joinPassword1" type="password" onchange="joinOnchange(this)" placeholder="비밀번호">
                 </div>
                 <div class="item">
-                    <input type="password" placeholder="비밀번호 확인">
+                    <input id="joinPassword2" type="password" onchange="joinOnchange(this)" placeholder="비밀번호 확인">
                 </div>
     
                 <div class="item item2">
-                    <input type="text" placeholder="이름">
+                    <input id="joinName" type="text" onchange="joinOnchange(this)" placeholder="이름">
                 </div>
                 <div class="item item2">
-                    <input type="text" placeholder="생년월일 6자리">
+                    <input id="joinBorn" type="text" onchange="joinOnchange(this)" placeholder="생년월일 6자리 ex) 980810">
                 </div>
                 <div class="item item2">
-                    <input type="phone" placeholder="핸드폰 번호">
+                    <input id="joiPhone" type="phone" onchange="joinOnchange(this)" placeholder="핸드폰 번호 ex)010-0000-0000">
                 </div>
-                <div class="join-button">회원가입</div>
+                <div class="join-button" onclick="joinOnclick()">회원가입</div>
             </div>
         </div>
     </div>
+
+
+    <script type="text/javascript" src="./js/loginjoin/loginjoin.js"></script>
 </body>
 </html>

@@ -25,12 +25,12 @@
                     <h1>Login</h1>
                 </div>
                 <div>
-                    <input type="text" placeholder="이메일 주소 또는 전화번호" class="inputStyle">
+                    <input type="text" id="loginId" onchange="loginOnchange(this)" placeholder="이메일 주소" class="inputStyle">
                 </div>
                 <div id="pw">
-                    <input type="text" placeholder="비밀번호" class="inputStyle">
+                    <input type="text" id="loginPw" onchange="loginOnchange(this)" placeholder="비밀번호" class="inputStyle">
                 </div>
-                <div id="lg">Login</div>
+                <div id="lg" onclick="loginOnclick()">Login</div>
                 <div id="checkbox">
                     <input type="checkbox">
                     <label>로그인 정보 저장</label>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-
+    <script type="text/javascript" src="./js/loginjoin/loginjoin.js"></script>
 
 </body>
 

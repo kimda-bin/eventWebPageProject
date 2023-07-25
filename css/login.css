@@ -79,6 +79,10 @@ body {
     height: 40px;
 
 }
+.error-input {
+
+    border: 3px solid red !important;
+}
 
 /* #lg:hover {
     background-color: rgb(255, 21, 21);
