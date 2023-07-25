@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijdya8hea0"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/initialize.css">
+    <link rel="stylesheet" href="./css/headerFooter.css">
+    <link rel="stylesheet" href="./css/mainpage.css">
+    <link rel="stylesheet" href="./css/mapCard.css">
+    <link rel="stylesheet" href="./css/main/festivalitem.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="./index.html"><img src="./img/서울구석구석로고.png" alt=""></a>
+        </div>
+        <ul class="navbar__menu">
+            <li><a href="./event.html">행사리스트</a></li>
+            <li><a href="./qa.html">문의사항</a></li>
+            <li><a href="./login.html">로그인</a></li>
+            <li><a href="./join.html">회원가입</a></li>
+        </ul>
+
+        <a href="#" class="navbar__toggleBtn"><i class="fas fa-bars"></i> </a>
+    </nav>
+
+
+    <main>
+        <div class="media">
+            <video src="./img/main_video.mp4" tyep="video.mp4" muted loop autoplay></video>
+        </div>
+
+        <div class="video_text">
+            <div class="video_text1">
+                Enjoy
+            </div>
+
+            <div class="video_text2">
+                Festival In Seoul
+            </div>
+        </div>
+
+        <h2 class="h2_festival_area">행사 지역</h2>
+
+        <div class="map_container">
+
+            <div class="eventCard">
+
+                <div class="image"></div>
+                <div class="cardFont">
+                    <div class="eventName"></div>
+                    <div class="infoL">
+                        <img src="img/locationPin.png" class="icon">
+                        <div class="eventLocation"></div>
+                    </div>
+                    <div class="infoT">
+                        <img src="img/time.png" class="icon">
+                        <div class="eventTime"></div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 네이버 지도 -->
+            <div id="map"></div>
+        </div>
+
+        <h2 class="h2_festival_list">행사 리스트</h2>
+
+        <div class="festival">
+            <div class="festival-wrap">
+                <div class="festival_container" id="festivalContainer"></div>
+            </div>
+           
+        </div>
+
+
+        <!-- 문의사항 -->
+
+        <div class="qa_container">
+            <p class="qa_header">Q&A</p>
+            <p class="qa_text">궁금한 사항은 1:1 문의를 남겨주세요. </p>
+            <button class="qa_button">
+                <a href="./qa.html">문의사항</a>
+            </button>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer_logo">
+            <img src="./img/서울구석구석로고.png" alt="">
+        </div>
+        <div>
+            <ul class="footer_email_box">
+                <li class="footer_email">gkjm123@naver.com</li>
+                <li class="footer_email">kon0147@gmail.com</li>
+                <li class="footer_email">rlaekqls0504@gmail.com</li>
+                <li class="footer_email">wisdomkmjabc@gmail.com </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script type="text/javascript" src="./js/main/header.js"></script>
+    <script type="text/javascript" src="./js/main/festivalitem.js"></script>
+    <script type="text/javascript">
+
+        // 지도 출력
+        let map = new naver.maps.Map('map', {
+            center: new naver.maps.LatLng(37.552758094502494, 126.98732600494576),
+            zoom: 10
+        });
+
+        // 서울시 공공데이터 불러오기 + 왼쪽 카드에 행사 정보 출력
+        $.ajax({
+            type: "GET",
+            url: "http://openapi.seoul.go.kr:8088/4742545152726c6133375046465877/json/culturalEventInfo/1/100/",
+            data: {},
+            success: function (response) {
+
+                let rows = [];
+                let row = response["culturalEventInfo"]["row"];
+
+                for (let i = 0; i < row.length; i++) {
+
+                    if (row[i].MAIN_IMG && row[i].MAIN_IMG != "" && row[i].IS_FREE && row[i].IS_FREE != "") {
+                        row[i].idx = i;
+                        rows.push(row[i]);
+                    }
+                }
+
+                let marker = [];
+
+                festivalItem(rows);
+
+
+                for (let i = 0; i < rows.length; i++) {
+                    marker[i] = new naver.maps.Marker({
+                        map: map,
+                        position: new naver.maps.LatLng(rows[i]["LOT"], rows[i]["LAT"]),
+                        icon: {
+                            url: "../img/location-pin.png",
+                        }
+                    });
+
+
+                    naver.maps.Event.addListener(marker[i], "click", function () {
+                        $(".codeName").remove();
+                        $(".eventCard").attr("style", " background-image: none")
+                        $(".eventName").text(rows[i]["TITLE"])
+                        $(".eventLocation").text(rows[i]["PLACE"])
+                        $(".eventTime").text(rows[i]["DATE"])
+                        $(".eventCard").prepend(`<div class="codeName"></div>`)
+                        $(".codeName").text(rows[i]["CODENAME"])
+                        $(".icon").attr("style", "display: block")
+                        let imgUrl = rows[i]["MAIN_IMG"]
+                        $(".image").html(`<a href="./event.html?detail#${row[i].idx}"><img src="${imgUrl}" class="festival_img"></img></a>`)
+                        let content = rows[i]["TITLE"]
+                        let infoWindow = new naver.maps.InfoWindow({
+                            content: content
+                        })
+
+                        if (infoWindow.getMap()) {
+                            infoWindow.close();
+                        } else {
+                            infoWindow.open(map, marker[i])
+                        }
+
+                    })
+
+                }
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>

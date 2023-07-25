@@ -1,0 +1,84 @@
+/* header */
+
+.header {
+    display: flex;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 90px;
+    justify-content: center;
+    z-index: 999;
+    /* 아래부터 login page 적용 */
+    scale: 67%;
+    margin-bottom: 639px;
+    /* margin-right: 100px; */
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav.logo>img {
+    object-fit: cover;
+    width: 150px;
+    height: 100px;
+    color: white;
+
+}
+
+.nav.menu_box {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    font-family: SUITE-Regular;
+    font-weight: 500;
+    font-size: 1.1em;
+    color: white;
+    width: 100%;
+
+}
+
+.nav.menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav.menu>li {
+    margin-left: 40px;
+    margin-right: 40px;
+    font-weight: 400;
+}
+
+/* footer */
+.footer{
+    position: relative;
+}
+footer {
+    background-color: black;
+    color: white;
+    font-family: SUITE-Regular;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: space-around;
+    /* 아래부터 login page 적용 */
+    scale: 50%;
+    width: 110%;
+    margin-top: 200px;
+}
+
+.footer_logo>img {
+    object-fit: cover;
+    width: 200px;
+    height: 100px;
+
+
+}
+
+.footer_email {
+    margin-bottom: 0.5em;
+    list-style: none;
+
+}

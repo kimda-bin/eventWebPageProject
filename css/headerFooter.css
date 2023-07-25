@@ -1,0 +1,141 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #000a12;
+    --accent-color: white;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 8px 24px;
+}
+
+.navbar__logo {
+    margin-left: 20px;
+    margin-right: 20px;
+    color: var(--text-color);
+}
+
+.navbar__logo>a>img {
+    width: 85px;
+}
+
+.navbar__logo i {
+    color: var(--accent-color);
+}
+
+.navbar__menu {
+
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar__menu li {
+    padding: 8px 12px;
+}
+
+.navbar__menu li:hover {
+    border-radius: 4px;
+    color: #ffffffe4;
+}
+
+.navbar__sns {
+    list-style: none;
+    display: none;
+    padding-left: 0;
+}
+
+
+.navbar__toggleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    /* color: var(--accent-color); */
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar__logo>a>img {
+        width: 30%;
+    }
+
+    .navbar__menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar__sns {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar__toggleBtn {
+        display: block;
+        top: 30px;
+    }
+
+    .navbar__menu.active,
+    .navbar__sns.active {
+        display: flex;
+    }
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    font-family: SUITE-Regular;
+    display: flex;
+    align-items: center;
+    height:150px;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.footer_logo>img {
+    object-fit: cover;
+    width: 100px;
+    height: 80px;
+}
+
+.footer_email_box {
+    display: block;
+}
+
+.footer_email {
+
+    font-size: 13px;
+    list-style: none;
+
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의사항</title>
+    <link rel="stylesheet" href="./css/initialize.css">
+    <link rel="stylesheet" href="./css/qa.css">
+    <link rel="stylesheet" href="./css/headerFooter.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="./index.html"><img src="./img/서울구석구석로고.png" alt=""></a>
+        </div>
+        <ul class="navbar__menu">
+            <li><a href="./event.html">행사리스트</a></li>
+            <li><a href="./qa.html">문의사항</a></li>
+            <li><a href="./login.html">로그인</a></li>
+            <li><a href="./join.html">회원가입</a></li>
+        </ul>
+
+        <a href="#" class="navbar__toggleBtn"><i class="fas fa-bars"></i> </a>
+    </nav>
+
+    
+    <section class="qa-banner">
+        <div class="qa-banner-text">
+            <h2>Q&A</h2>
+            <p>궁금한 사항은 1:1 문의를 남겨주세요.</p>
+        </div>
+    </section>
+
+    <div class="qa-container">
+
+        <div class="qa-container2">
+            <h2>문의하기</h2>
+            <table class="qa-table">
+                <tbody>
+                    <tr>
+                        <th><span >업체명</span>
+                            <span class="star">*</span>
+                        </th>
+                        <td>
+                            <input id="qaCompany" type="text" maxlength="100" onchange="qaOnchange(this)"
+                                    placeholder="업체명을 입력하세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>담당자명</span>
+                            <span class="star">*</span>
+                        </th>
+                        <td>
+                            <input id="qaManager" type="text" maxlength="100" onchange="qaOnchange(this)" 
+                                    placeholder="담당자명을 입력하세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span>휴대폰</span>
+                            <span class="star">*</span>
+                        </th>
+                        <td class="cellphone">
+                            <input id="qaPhone" class="box" type="text" maxlength="20" 
+                                                onchange="qaOnchange(this)" placeholder="휴대폰번호를 입력하세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><span >이메일</span>
+                            <span class="star">*</span>
+                        </th>
+                        <td class="email">
+                            <input id="qaEmail" type="text" 
+                                    onchange="qaOnchange(this)" placeholder="이메일을 입력하세요.">
+                        </td>
+                    </tr>
+                    <tr class="inquiry">
+                        <th><span >내용</span>
+                            <span class="star">*</span>
+                        </th>
+                        <td>
+                            <textarea id="qaContents" onchange="qaOnchange(this)" 
+                                        type="textarea" placeholder="문의내용을 입력하세요."></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="btn"><button type="submit" onclick="qaOnclick()">문의하기</button></div>
+
+
+    <footer>
+        <div class="footer_logo">
+            <img src="./img/서울구석구석로고.png" alt="">
+        </div>
+        <div>
+            <ul class="footer_email_box">
+                <li class="footer_email">gkjm123@naver.com</li>
+                <li class="footer_email">kon0147@gmail.com</li>
+                <li class="footer_email">rlaekqls0504@gmail.com</li>
+                <li class="footer_email">wisdomkmjabc@gmail.com</li>
+
+            </ul>
+        </div>
+    </footer>
+    </footer>
+
+    <script type="text/javascript" src="./js/main/header.js"></script>
+    <script type="text/javascript" src="./js/qa/qa.js"></script>
+
+</body>
+
+</html>

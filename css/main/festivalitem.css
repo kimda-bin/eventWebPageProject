@@ -1,0 +1,84 @@
+
+/** festival_list box */
+.festival_list {
+    width: calc(24% - 15px);  cursor: pointer;
+    height: 350px; margin-right: 1em; margin-bottom: 1em;
+    border-radius: 4px;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, .1);
+} 
+
+.festival_list > a {
+    display: block; position: relative;
+    overflow: hidden; z-index: 1; text-decoration: none;
+    border-radius: 4px;
+}
+.festival_list > a > .thumb {
+    overflow: hidden; position: relative;
+    width: 100%; height: 210px; border: 1px solid #eee;
+    background-repeat: no-repeat;
+    background-size: cover; background-position: center;
+
+}
+ .festival_list > a > .thumb:hover {
+
+    background-size: contain; background-position: bottom;
+    border: 1px solid #eee;
+    transition-property: transform;
+    transition-duration: 0.5;
+    transition-timing-function: linear;
+    -webkit-transform: transform 0.5s linear;
+
+    /* transition: transform 0.5s cubic-bezier(.23, 1, .32, 1);
+    -webkit-transform: transform 0.5s cubic-bezier(.23, 1, .32, 1); */
+}
+
+ .festival_list > a > .thumb > .tip-text {
+    display: inline-block;
+    line-height: 1.4; font-size: 1em;
+    background: #eee; color: #000; font-weight: bold;
+    position: absolute;
+    z-index: 1; left: 5px; top: 5px;
+    padding: 5px 10px; min-width: 80px;
+    box-sizing: border-box; text-align: center;
+    font-size: 14px; border-radius: 4px;  
+}
+
+
+.festival_list > a > .infor-element {
+    position: relative; z-index: 10;
+    margin: 0; background-color: #fff;
+}
+.festival_list > a > .infor-element > .infor-element-inner {
+    min-height: 125px; padding: 13px 10px;
+    box-sizing: border-box;
+}
+.festival_list > a > .infor-element > .infor-element-inner .title {
+    font-size: 17px; color: #222;
+    font-weight: 700;
+    display: block; text-overflow: ellipsis;
+    white-space: nowrap; overflow: hidden;
+}
+
+
+ .festival_list > a > .infor-element > .infor-element-inner .small-text {
+    font-size: 14px;
+    color: #959595;
+    margin-top: 5px;
+    line-height: 20px;
+    height: 42px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+
+
+@media screen and (max-width:600px) {
+
+   .festival > .festival-wrap {
+        width: 88%; margin: auto;
+    }
+}

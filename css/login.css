@@ -1,0 +1,154 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(69, 69, 69);
+    flex-direction: column;
+    background-image: url("../img/background.png");
+}
+
+.container {
+    width: 350px;
+    height: 450px;
+    background-color: rgb(55, 55, 55);
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.contentBody {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.closeStyle {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cross {
+    margin-bottom: 10px;
+    width: 15px;
+    height: 15px;
+}
+
+.cross:hover {
+    animation: rotate 0.5s
+}
+
+.closeBox {
+    display: flex;
+}
+
+.content {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#lg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: small;
+    color: white;
+    background-color: rgb(91, 157, 255);
+    cursor: pointer;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.inputStyle {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+
+}
+.error-input {
+    border: 3px solid red !important;
+}
+
+
+.login-email-invaild {
+    
+    color: rgb(255, 91, 91);
+    font-size: 0.9em;
+    display: none;
+}
+
+/* #lg:hover {
+    background-color: rgb(255, 21, 21);
+} */
+
+h1 {
+    color: white;
+    margin-top: 30px;
+}
+
+
+::placeholder {
+    font-size: small;
+}
+
+#checkbox {
+    display: flex;
+    color: white;
+    font-size: small;
+    margin-top: 10px;
+}
+
+#checkbox label {
+    margin-left: 3%;
+}
+
+#text {
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    color: rgb(180, 180, 180);
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#text>a {
+    color: rgb(226, 225, 225);
+    font-size: 18px;
+}
+
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 330px;
+        height: 450px;
+    }
+}

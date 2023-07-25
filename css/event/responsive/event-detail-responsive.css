@@ -1,0 +1,59 @@
+
+
+
+@media screen and (max-width:756px) {
+    
+    /** 행사 상세 페이지 wrap */
+    #eventContainer > .event-detail-wrap {
+        width: 95%;
+    }
+
+    /** info box */
+    #eventContainer > .event-detail-wrap > .info-box {
+        display: block;
+    }
+
+    #eventContainer > .event-detail-wrap > .info-box > .img-box {
+        width: 100%;
+    }
+
+    #eventContainer > .event-detail-wrap > .info-box > .img-box > img {
+        display: block;
+        width: 95%; max-height: 600px; margin: auto;
+    }
+    
+
+    #eventContainer > .event-detail-wrap > .info-box > .txt-box {
+        width: 100%;
+    }
+
+    #eventContainer > .event-detail-wrap > .info-box > .txt-box .event-title {
+        font-size: 1.5em;
+    }
+
+    /** 서브 정보 */
+    #eventContainer > .event-detail-wrap > .sub-info-box {
+        width: 100%; min-height: 480px;
+        margin-bottom: 5em; margin-top: 8em;
+        padding: 0 1em;
+    }
+
+
+    /** 위치 안내 **/
+    #eventContainer > .event-detail-wrap > .event-detail-location {
+        width: 90%; margin: auto;
+    }
+
+}
+
+@media screen and (min-width:757px) and (max-width:1024px) {
+
+     /** 위치 안내 **/
+     #eventContainer > .event-detail-wrap > .event-detail-location {
+        width: 85%; margin: auto;
+    }
+
+  
+}
+
+

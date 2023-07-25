@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./css/initialize.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/headerFooter.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+    <!-- content -->
+    <div class="contentBody">
+        <a href="./index.html" class="closeStyle">
+            <img src="./img/close.png" class="cross">
+        </a>
+        <div class="container">
+            <div style="width: 250px;">
+                <div>
+                    <h1>Login</h1>
+                </div>
+                <div>
+                    <input type="text" id="loginId" onchange="loginOnchange(this)" placeholder="이메일 주소"
+                        class="inputStyle">
+                </div>
+                <div id="pw">
+                    <input type="password" id="loginPw" onchange="loginOnchange(this)" placeholder="비밀번호"
+                        class="inputStyle">
+                </div>
+                <div id="lg" onclick="loginOnclick()">Login</div>
+
+                <div id="emailInvaild" class="login-email-invaild">
+                    이메일 형식이 맞지 않습니다.
+                </div>
+                <div id="checkbox">
+                    <input type="checkbox">
+                    <label>로그인 정보 저장</label>
+                </div>
+                <div id="text">
+                    <div style="text-align: center; width: 100%;">서울구석구석 회원이 아닌가요?</div>
+
+                </div>
+                <div style="text-align: center;">
+                    <a href="./join.html">지금 가입하세요.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./js/loginjoin/loginjoin.js"></script>
+
+</body>
+
+</html>
