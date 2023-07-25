@@ -39,7 +39,6 @@ const joinOnclick = () => {
     let bornPattern = /([0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1,2][0-9]|3[0,1]))/;
     let phonePattern = /01[016789][^0][0-9]{2,3}[0-9]{3,4}/;
 
-
     let email = document.getElementById('joinEmail');
 
     if (email.value === "" || emailPattern.test(email.value) === false) {
