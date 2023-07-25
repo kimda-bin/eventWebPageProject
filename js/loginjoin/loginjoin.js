@@ -2,29 +2,95 @@
 
 
 $(window).ready(function(){ 
-    
+
+
+    // 로그인 페이지
     $("#loginId").on("input",function(e){
-        
        
         let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (emailPattern.test(e.currentTarget.value)) {
-    
+            
             document.getElementById('emailInvaild').style.display = 'none';
 
         } else {
+
+            if (!e.currentTarget.classList.contains('error-input')) {
+                e.currentTarget.classList +=' error-input'
+
+            }
             document.getElementById('emailInvaild').style.display = 'block';
         }
         
         if (e.currentTarget.value === "" ) {
-            
+            e.currentTarget.classList.remove('error-input');
+           
             document.getElementById('emailInvaild').style.display = 'none';
         }
 
+    })
+
+    // 회원가입 페이지
+    $("#joinEmail").on("input",function(e){
+       
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (emailPattern.test(e.currentTarget.value)) {
+            e.currentTarget.classList.remove('error-input');
+          
+
+        } else {
+            if (!e.currentTarget.classList.contains('error-input')) {
+                e.currentTarget.classList +=' error-input'
+            }
+   
+        }
+        
+        if (e.currentTarget.value === "" ) {
+            e.currentTarget.classList.remove('error-input');
+        }
 
     })
+
+    $("#joinBorn").on("input",function(e){
+       
+        let bornPattern = /([0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1,2][0-9]|3[0,1]))/;
+        if (bornPattern.test(e.currentTarget.value)) {
+            e.currentTarget.classList.remove('error-input');
+          
+
+        } else {
+            if (!e.currentTarget.classList.contains('error-input')) {
+                e.currentTarget.classList +=' error-input'
+            }
+   
+        }
+        
+        if (e.currentTarget.value === "" ) {
+            e.currentTarget.classList.remove('error-input');
+        }
+
+    })
+
+    $("#joiPhone").on("input",function(e){
+       
+        let phonePattern = /01[016789][^0][0-9]{2,3}[0-9]{3,4}/;
+        if (phonePattern.test(e.currentTarget.value)) {
+            e.currentTarget.classList.remove('error-input');
+
+        } else {
+            if (!e.currentTarget.classList.contains('error-input')) {
+                e.currentTarget.classList +=' error-input'
+            }
+   
+        }
+        
+        if (e.currentTarget.value === "" ) {
+            e.currentTarget.classList.remove('error-input');
+        }
+
+    })
+
   
 }); 
-
 
 
 const loginOnchange = (e) => {
@@ -32,16 +98,6 @@ const loginOnchange = (e) => {
 }
 
 const loginOnclick = () => {
-
-    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    let loginId = document.getElementById('loginId');
-
-    if (loginId.value === '' || emailPattern.test(loginId.value) === false) {
-
-        loginId.className += ' error-input';
-        return alert('email를 확인해주세요.')
-    }
 
     let loginPw = document.getElementById('loginPw');
 
